@@ -2,187 +2,135 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Электромонтаж НН | Проводка и Умный Свет</title>
+    <title>ELECTRO-LED | Электромонтаж в Нижнем Новгороде</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #00c2ff;
-            --bg: #0f0f0f;
-            --card-bg: #1c1c1c;
-            --text: #ffffff;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+        
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Manrope', sans-serif;
+            background-color: #0f1115;
+            color: #ffffff;
         }
 
-        .container {
-            padding: 20px;
-            max-width: 1100px;
-            margin: auto;
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, #1e222d 0%, #0f1115 100%);
         }
 
-        /* Шапка */
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200') no-repeat center/cover;
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: #22d3ee;
+            transition: all 0.3s ease;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
-
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--primary);
-            color: black;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,194,255,0.4); }
-
-        /* Сетки */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+        /* Плавное появление секций */
+        .section-fade {
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border-bottom: 4px solid transparent;
-            transition: 0.3s;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .card:hover { border-color: var(--primary); }
-        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
-
-        /* Акценты */
-        .highlight-box {
-            background: linear-gradient(145deg, #1c1c1c, #252525);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 60px 0;
-            border-left: 5px solid var(--primary);
-        }
-
-        .tool-tag {
-            display: inline-block;
-            background: #333;
-            padding: 5px 15px;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 0.9rem;
-        }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid #333; }
-
-        /* Анимация для ленты (визуальный эффект на сайте) */
-        .led-demo {
-            height: 5px;
-            background: #333;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .led-demo::after {
-            content: '';
-            position: absolute;
-            left: -50%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            animation: flow 3s infinite linear;
-        }
-        @keyframes flow {
-            0% { left: -50%; }
-            100% { left: 100%; }
+        
+        .active-link {
+            color: #22d3ee;
+            border-bottom: 2px solid #22d3ee;
         }
     </style>
 </head>
-<body>
+<body class="hero-gradient">
 
-<header>
-    <div class="container">
-        <h1>Электромонтаж в Нижнем Новгороде</h1>
-        <p class="subtitle">Создаем надежную электрику и эффектное освещение для вашего комфорта</p>
-        <a href="https://t.me/ТВОЙ_НИК" class="btn"><i class="fab fa-telegram"></i> Написать в Telegram</a>
-    </div>
-</header>
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-extrabold tracking-tight">ELECTRO<span class="text-cyan-400">LED</span></div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#home" class="hover:text-cyan-400 transition">Главная</a>
+                <a href="#services" class="hover:text-cyan-400 transition">Услуги</a>
+                <a href="#prices" class="hover:text-cyan-400 transition">Цены</a>
+                <a href="#portfolio" class="hover:text-cyan-400 transition">Работы</a>
+            </div>
 
-<div class="container">
-
-    <div class="highlight-box">
-        <h2>Чистый монтаж в новостройках</h2>
-        <p>Мы знаем, как важна чистота и точность при черновой отделке. Работаем современным инструментом, который экономит ваше время и деньги.</p>
-        <div>
-            <span class="tool-tag"><i class="fas fa-check"></i> Штроборез с пылеотсосом</span>
-            <span class="tool-tag"><i class="fas fa-check"></i> Промышленный пылесос</span>
-            <span class="tool-tag"><i class="fas fa-check"></i> Алмазное бурение</span>
-            <span class="tool-tag"><i class="fas fa-check"></i> Лазерная разметка</span>
+            <a href="https://t.me/ТВОЙ_НИК" class="bg-white text-black px-6 py-2.5 rounded-full font-bold hover:bg-cyan-400 transition transform hover:scale-105">
+                Связаться
+            </a>
         </div>
-    </div>
+    </nav>
 
-    <h2 style="text-align: center;">Наши направления</h2>
-    <div class="grid">
-        <div class="card">
-            <i class="fas fa-bolt"></i>
-            <h3>Электрика под ключ</h3>
-            <p>Полный комплекс: от проекта и штробления до сборки эталонного щита. Идеально для новых квартир и домов.</p>
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 leading-tight">
+                Чистый электромонтаж <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">без пыли и хлопот</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                Работаем профессиональным инструментом Bosch и Hilti. Специализируемся на новостройках и дизайнерском освещении в Нижнем Новгороде.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#services" class="px-10 py-4 bg-cyan-500 text-black rounded-2xl font-bold text-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition">Что мы умеем</a>
+                <a href="#portfolio" class="px-10 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 transition">Наши работы</a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <i class="fas fa-lightbulb"></i>
-            <h3>Умная подсветка</h3>
-            <div class="led-demo"></div>
-            <p>Адресные LED-ленты с плавным розжигом. Настройка сценариев: свет "сопровождает" вас по коридору или лестнице.</p>
+    <section id="services" class="py-32 px-6 bg-black/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl font-bold mb-4">Наши услуги</h2>
+                <div class="h-1 w-20 bg-cyan-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl border border-white/5 bg-white/5 card-hover">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Электромонтаж</h3>
+                    <p class="text-gray-400 leading-relaxed">Полный комплекс работ в квартирах и домах. От проекта до установки чистовой электрики.</p>
+                </div>
+                <div class="p-8 rounded-3xl border border-white/5 bg-white/5 card-hover">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-lightbulb text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Адресный свет</h3>
+                    <p class="text-gray-400 leading-relaxed">Проектирование и монтаж умных светодиодных систем с датчиками движения и управления.</p>
+                </div>
+                <div class="p-8 rounded-3xl border border-white/5 bg-white/5 card-hover">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Сборка щитов</h3>
+                    <p class="text-gray-400 leading-relaxed">Профессиональная сборка силовых и слаботочных щитов с маркировкой и гарантией.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Безопасность</h3>
-            <p>Защита от скачков напряжения, утечек тока и коротких замыканий. Только качественные комплектующие.</p>
+    <section id="prices" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[40px] p-8 md:p-16">
+            <h2 class="text-4xl font-bold mb-12 text-center">Примерная стоимость</h2>
+            <div class="space-y-6">
+                <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                    <span class="text-lg">Штробление бетона (метр)</span>
+                    <span class="text-cyan-400 font-bold">от 350 ₽</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                    <span class="text-lg">Установка подрозетника</span>
+                    <span class="text-cyan-400 font-bold">от 400 ₽</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                    <span class="text-lg">Сборка щита (модуль)</span>
+                    <span class="text-cyan-400 font-bold">от 500 ₽</span>
+                </div>
+                <p class="text-sm text-gray-500 mt-8">* Окончательная цена зависит от материала стен и сложности проекта.</p>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://t.me/ТВОЙ_НИК" class="inline-block px-12 py-5 bg-white text-black rounded-2xl font-bold hover:bg-cyan-400 transition">Получить расчет</a>
+            </div>
         </div>
-    </div>
-
-    <div class="highlight-box" style="border-left-color: #ff00ff;">
-        <h2 style="color: #ff00ff;">Вау-эффект: Адресная лента</h2>
-        <p>Это не просто подсветка, это динамика. В отличие от обычной ленты, здесь мы можем управлять каждым диодом отдельно.</p>
-        <ul>
-            <li>Плавное включение от датчика движения</li>
-            <li>Эффект "бегущей волны" при входе в дом</li>
-            <li>Интеграция в дизайн-проекты любой сложности</li>
-        </ul>
-        <p><i>Сделаем ваш интерьер уникальным в Нижнем Новгороде.</i></p>
-    </div>
-
-    <div style="text-align: center; margin: 80px 0;">
-        <h2>Готовы начать?</h2>
-        <p>Бесплатно проконсультируем и составим предварительную смету.</p>
-        <p style="font-size: 1.5rem; color: var(--primary);">+7 (XXX) XXX-XX-XX</p>
-        <a href="tel:+79999999999" class="btn">Заказать выезд на замер</a>
-    </div>
-
-</div>
-
-<footer>
-    <p>&copy; 2024 Электромонтаж Нижний Новгород. Профессионально. Чисто. Навечно.</p>
-</footer>
+    </section>
 
 </body>
 </html>
