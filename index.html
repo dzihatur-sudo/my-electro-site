@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Электромонтаж НН | Проводка и Умный Свет</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00c2ff;
+            --bg: #0f0f0f;
+            --card-bg: #1c1c1c;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200') no-repeat center/cover;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--primary);
+            color: black;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,194,255,0.4); }
+
+        /* Сетки */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border-bottom: 4px solid transparent;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+
+        /* Акценты */
+        .highlight-box {
+            background: linear-gradient(145deg, #1c1c1c, #252525);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .tool-tag {
+            display: inline-block;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #333; }
+
+        /* Анимация для ленты (визуальный эффект на сайте) */
+        .led-demo {
+            height: 5px;
+            background: #333;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .led-demo::after {
+            content: '';
+            position: absolute;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: flow 3s infinite linear;
+        }
+        @keyframes flow {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Электромонтаж в Нижнем Новгороде</h1>
+        <p class="subtitle">Создаем надежную электрику и эффектное освещение для вашего комфорта</p>
+        <a href="https://t.me/ТВОЙ_НИК" class="btn"><i class="fab fa-telegram"></i> Написать в Telegram</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="highlight-box">
+        <h2>Чистый монтаж в новостройках</h2>
+        <p>Мы знаем, как важна чистота и точность при черновой отделке. Работаем современным инструментом, который экономит ваше время и деньги.</p>
+        <div>
+            <span class="tool-tag"><i class="fas fa-check"></i> Штроборез с пылеотсосом</span>
+            <span class="tool-tag"><i class="fas fa-check"></i> Промышленный пылесос</span>
+            <span class="tool-tag"><i class="fas fa-check"></i> Алмазное бурение</span>
+            <span class="tool-tag"><i class="fas fa-check"></i> Лазерная разметка</span>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Наши направления</h2>
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-bolt"></i>
+            <h3>Электрика под ключ</h3>
+            <p>Полный комплекс: от проекта и штробления до сборки эталонного щита. Идеально для новых квартир и домов.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Умная подсветка</h3>
+            <div class="led-demo"></div>
+            <p>Адресные LED-ленты с плавным розжигом. Настройка сценариев: свет "сопровождает" вас по коридору или лестнице.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Безопасность</h3>
+            <p>Защита от скачков напряжения, утечек тока и коротких замыканий. Только качественные комплектующие.</p>
+        </div>
+    </div>
+
+    <div class="highlight-box" style="border-left-color: #ff00ff;">
+        <h2 style="color: #ff00ff;">Вау-эффект: Адресная лента</h2>
+        <p>Это не просто подсветка, это динамика. В отличие от обычной ленты, здесь мы можем управлять каждым диодом отдельно.</p>
+        <ul>
+            <li>Плавное включение от датчика движения</li>
+            <li>Эффект "бегущей волны" при входе в дом</li>
+            <li>Интеграция в дизайн-проекты любой сложности</li>
+        </ul>
+        <p><i>Сделаем ваш интерьер уникальным в Нижнем Новгороде.</i></p>
+    </div>
+
+    <div style="text-align: center; margin: 80px 0;">
+        <h2>Готовы начать?</h2>
+        <p>Бесплатно проконсультируем и составим предварительную смету.</p>
+        <p style="font-size: 1.5rem; color: var(--primary);">+7 (XXX) XXX-XX-XX</p>
+        <a href="tel:+79999999999" class="btn">Заказать выезд на замер</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Электромонтаж Нижний Новгород. Профессионально. Чисто. Навечно.</p>
+</footer>
+
+</body>
+</html>
