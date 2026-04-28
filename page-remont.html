@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -574,10 +574,7 @@
                 background-color: #e64a19;
                 transform: scale(1.05);
             }
-/* Статичный фон для телефона (по умолчанию скрыт) */
-.parallax-section-mobile {
-    display: none;
-}
+
         /* Адаптив для телефонов */
         @media (max-width: 768px) {
             .remont-hero h1 {
@@ -595,30 +592,6 @@
             .step {
                 flex-direction: column;
             }
-                /* Отключаем параллакс */
-    .parallax-section {
-        background-attachment: scroll;
-        height: auto;
-        min-height: 300px;
-        padding: 60px 20px;
-        background-position: top center;
-        background-size: cover;
-    }
-    
-    /* Показываем статичную версию */
-    .parallax-section-mobile {
-        display: block;
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-    
-    .parallax-content h2 {
-        font-size: 28px;
-    }
-    .parallax-content p {
-        font-size: 16px;
-    }
         }
 
 
@@ -712,14 +685,11 @@
 
     <!-- ===== СЕКЦИЯ 3: ПАРАЛЛАКС-ФОН ===== -->
     <div class="parallax-section">
-    <!-- Картинка для телефона (скрыта на десктопе) -->
-    <img src="parallax-bg.jpg" alt="Фон" class="parallax-section-mobile">
-    
-    <div class="parallax-content">
-        <h2>Ваш свет — наша работа</h2>
-        <p>Диагностика, монтаж и ремонт - раз и навсегда</p>
+        <div class="parallax-content">
+            <h2>Ваш свет — наша работа</h2>
+            <p>Диагностика, монтаж, ремонт — один раз и навсегда</p>
+        </div>
     </div>
-</div>
 
     <!-- ===== МОДАЛЬНОЕ ОКНО (ЗАЯВКА) ===== -->
     <div class="modal-overlay" id="modalOverlay">
@@ -893,82 +863,82 @@
     <!-- ========================================= -->
     <!-- ===== СКРИПТЫ ===== -->
     <script>
-    // Бургер-меню
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (burgerBtn) {
+        // Бургер-меню
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        if (burgerBtn) {
         burgerBtn.addEventListener('click', function () {
-            burgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        burgerBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
         });
-    }
+        }
 
-    // ===== МОДАЛЬНОЕ ОКНО =====
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalClose = document.getElementById('modalClose');
-    const btnRequest = document.querySelector('.btn-request');
-    const requestForm = document.getElementById('requestForm');
-    const modalSuccess = document.getElementById('modalSuccess');
+        // ===== МОДАЛЬНОЕ ОКНО =====
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const btnRequest = document.querySelector('.btn-request');
+        const requestForm = document.getElementById('requestForm');
+        const modalSuccess = document.getElementById('modalSuccess');
 
-    // Открыть окно по кнопке "Оставить заявку"
-    if (btnRequest) {
+        // Открыть окно по кнопке "Оставить заявку"
+        if (btnRequest) {
         btnRequest.addEventListener('click', function () {
-            modalOverlay.classList.add('active');
+        modalOverlay.classList.add('active');
         });
-    }
+        }
 
-    // Закрыть окно по крестику
-    if (modalClose) {
+        // Закрыть окно по крестику
+        if (modalClose) {
         modalClose.addEventListener('click', function () {
-            modalOverlay.classList.remove('active');
+        modalOverlay.classList.remove('active');
         });
-    }
+        }
 
-    // Закрыть окно при клике на фон
-    if (modalOverlay) {
+        // Закрыть окно при клике на фон
+        if (modalOverlay) {
         modalOverlay.addEventListener('click', function (e) {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-            }
+        if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+        }
         });
-    }
+        }
 
-    // Отправка формы
-    if (requestForm) {
+        // Отправка формы
+        if (requestForm) {
         requestForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+        e.preventDefault();
 
-            const name = document.getElementById('nameInput').value;
-            const phone = document.getElementById('phoneInput').value;
-            const question = document.getElementById('questionInput').value || 'Не указан';
+        const name = document.getElementById('nameInput').value;
+        const phone = document.getElementById('phoneInput').value;
+        const question = document.getElementById('questionInput').value || 'Не указан';
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
 
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    question: question
-                })
-            })
-            .then(() => {
-                requestForm.classList.add('hidden');
-                modalSuccess.classList.add('active');
-                setTimeout(() => {
-                    modalOverlay.classList.remove('active');
-                    requestForm.classList.remove('hidden');
-                    modalSuccess.classList.remove('active');
-                    requestForm.reset();
-                }, 3000);
-            })
-            .catch(() => {
-                alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
-            });
+        fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+        name: name,
+        phone: phone,
+        question: question
+        })
+        })
+        .then(() => {
+        requestForm.classList.add('hidden');
+        modalSuccess.classList.add('active');
+        setTimeout(() => {
+        modalOverlay.classList.remove('active');
+        requestForm.classList.remove('hidden');
+        modalSuccess.classList.remove('active');
+        requestForm.reset();
+        }, 3000);
+        })
+        .catch(() => {
+        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
         });
-    }
-</script>
+        });
+        }
+    </script>
 </body>
 </html>
