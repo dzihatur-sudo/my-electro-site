@@ -445,45 +445,42 @@
 
         // Отправка формы
         requestForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+            e.preventDefault(); // Не перезагружаем страницу
 
-    const name = document.getElementById('nameInput').value;
-    const phone = document.getElementById('phoneInput').value;
-    const question = document.getElementById('questionInput').value || 'Не указан';
+            const name = document.getElementById('nameInput').value;
+            const phone = document.getElementById('phoneInput').value;
+            const question = document.getElementById('questionInput').value || 'Не указан';
 
-    // ⚠️ ЗАМЕНИ ЭТУ ССЫЛКУ НА СВОЮ (из Google Apps Script)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+            // Вставь свой URL из Google Apps Script (тот, что скопировал выше)
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
 
-    const data = {
-        name: name,
-        phone: phone,
-        question: question
-    };
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    question: question
+                })
+            })
+                .then(() => {
+                    // Прячем форму, показываем успех
+                    requestForm.classList.add('hidden');
+                    modalSuccess.classList.add('active');
 
-    fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(() => {
-        // Успех — показываем зелёную галочку
-        requestForm.classList.add('hidden');
-        modalSuccess.classList.add('active');
-
-        setTimeout(() => {
-            modalOverlay.classList.remove('active');
-            requestForm.classList.remove('hidden');
-            modalSuccess.classList.remove('active');
-            requestForm.reset();
-        }, 3000);
-    })
-    .catch(() => {
-        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
-    });
-});
+                    // Через 3 секунды закрываем окно и сбрасываем
+                    setTimeout(() => {
+                        modalOverlay.classList.remove('active');
+                        requestForm.classList.remove('hidden');
+                        modalSuccess.classList.remove('active');
+                        requestForm.reset();
+                    }, 3000);
+                })
+                .catch(() => {
+                    alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+                });
+        });
     </script>
 
 
