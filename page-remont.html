@@ -574,7 +574,10 @@
                 background-color: #e64a19;
                 transform: scale(1.05);
             }
-
+/* Статичный фон для телефона (по умолчанию скрыт) */
+.parallax-section-mobile {
+    display: none;
+}
         /* Адаптив для телефонов */
         @media (max-width: 768px) {
             .remont-hero h1 {
@@ -592,6 +595,30 @@
             .step {
                 flex-direction: column;
             }
+                /* Отключаем параллакс */
+    .parallax-section {
+        background-attachment: scroll;
+        height: auto;
+        min-height: 300px;
+        padding: 60px 20px;
+        background-position: top center;
+        background-size: cover;
+    }
+    
+    /* Показываем статичную версию */
+    .parallax-section-mobile {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .parallax-content h2 {
+        font-size: 28px;
+    }
+    .parallax-content p {
+        font-size: 16px;
+    }
         }
 
 
@@ -689,6 +716,15 @@
             <h2>Ваш свет — наша работа</h2>
             <p>Диагностика, монтаж, ремонт — один раз и навсегда</p>
         </div>
+        <div class="parallax-section">
+    <!-- Картинка для телефона (скрыта на десктопе) -->
+    <img src="parallax-bg.jpg" alt="Фон" class="parallax-section-mobile">
+    
+    <div class="parallax-content">
+        <h2>Ваш свет — наша работа</h2>
+        <p>Более 100 реализованных проектов</p>
+    </div>
+</div>
     </div>
 
     <!-- ===== МОДАЛЬНОЕ ОКНО (ЗАЯВКА) ===== -->
