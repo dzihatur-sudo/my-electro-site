@@ -949,57 +949,83 @@
     </div>
 
     <!-- ===== СКРИПТЫ ===== -->
-    <script>
-        // Бургер-меню
-        const burgerBtn = document.getElementById('burgerBtn');
-        const navMenu = document.getElementById('navMenu');
+   <script>
+    // Бургер-меню
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (burgerBtn) {
         burgerBtn.addEventListener('click', function () {
             burgerBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
+    }
 
-        // Модальное окно
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalClose = document.getElementById('modalClose');
-        const btnRequest = document.querySelector('.btn-request');
-        const requestForm = document.getElementById('requestForm');
-        const modalSuccess = document.getElementById('modalSuccess');
+    // ===== МОДАЛЬНОЕ ОКНО =====
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const btnRequest = document.querySelector('.btn-request');
+    const requestForm = document.getElementById('requestForm');
+    const modalSuccess = document.getElementById('modalSuccess');
 
+    // Открыть окно по кнопке "Оставить заявку"
+    if (btnRequest) {
         btnRequest.addEventListener('click', function () {
             modalOverlay.classList.add('active');
         });
+    }
+
+    // Закрыть окно по крестику
+    if (modalClose) {
         modalClose.addEventListener('click', function () {
             modalOverlay.classList.remove('active');
         });
+    }
+
+    // Закрыть окно при клике на фон
+    if (modalOverlay) {
         modalOverlay.addEventListener('click', function (e) {
             if (e.target === modalOverlay) {
                 modalOverlay.classList.remove('active');
             }
         });
+    }
+
+    // Отправка формы
+    if (requestForm) {
         requestForm.addEventListener('submit', function (e) {
             e.preventDefault();
+
             const name = document.getElementById('nameInput').value;
             const phone = document.getElementById('phoneInput').value;
             const question = document.getElementById('questionInput').value || 'Не указан';
-            const BOT_TOKEN = 'ТВОЙ_ТОКЕН_БОТА';
-            const CHAT_ID = 'ТВОЙ_CHAT_ID';
-            const message = `📩 Новая заявка с сайта!%0A%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A❓ Вопрос: ${question}`;
-            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}`;
-            fetch(url)
-                .then(() => {
-                    requestForm.classList.add('hidden');
-                    modalSuccess.classList.add('active');
-                    setTimeout(() => {
-                        modalOverlay.classList.remove('active');
-                        requestForm.classList.remove('hidden');
-                        modalSuccess.classList.remove('active');
-                        requestForm.reset();
-                    }, 3000);
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    question: question
                 })
-                .catch(() => {
-                    alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
-                });
+            })
+            .then(() => {
+                requestForm.classList.add('hidden');
+                modalSuccess.classList.add('active');
+                setTimeout(() => {
+                    modalOverlay.classList.remove('active');
+                    requestForm.classList.remove('hidden');
+                    modalSuccess.classList.remove('active');
+                    requestForm.reset();
+                }, 3000);
+            })
+            .catch(() => {
+                alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+            });
         });
-    </script>
+    }
+</script>
 </body>
 </html>
