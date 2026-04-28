@@ -445,39 +445,45 @@
 
         // Отправка формы
         requestForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Не перезагружаем страницу
+    e.preventDefault();
 
-            const name = document.getElementById('nameInput').value;
-            const phone = document.getElementById('phoneInput').value;
-            const question = document.getElementById('questionInput').value || 'Не указан';
+    const name = document.getElementById('nameInput').value;
+    const phone = document.getElementById('phoneInput').value;
+    const question = document.getElementById('questionInput').value || 'Не указан';
 
-            // ТВОЙ ТОКЕН БОТА И ТВОЙ CHAT ID (замени на свои!)
-            const BOT_TOKEN = 'ТВОЙ_ТОКЕН_БОТА';
-            const CHAT_ID = 'ТВОЙ_CHAT_ID';
+    // ⚠️ ЗАМЕНИ ЭТУ ССЫЛКУ НА СВОЮ (из Google Apps Script)
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
 
-            const message = `📩 Новая заявка с сайта!%0A%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A❓ Вопрос: ${question}`;
+    const data = {
+        name: name,
+        phone: phone,
+        question: question
+    };
 
-            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}`;
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(() => {
+        // Успех — показываем зелёную галочку
+        requestForm.classList.add('hidden');
+        modalSuccess.classList.add('active');
 
-            // Отправляем в Telegram
-            fetch(url)
-                .then(() => {
-                    // Прячем форму, показываем успех
-                    requestForm.classList.add('hidden');
-                    modalSuccess.classList.add('active');
-
-                    // Через 3 секунды закрываем окно и сбрасываем
-                    setTimeout(() => {
-                        modalOverlay.classList.remove('active');
-                        requestForm.classList.remove('hidden');
-                        modalSuccess.classList.remove('active');
-                        requestForm.reset();
-                    }, 3000);
-                })
-                .catch(() => {
-                    alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
-                });
-        });
+        setTimeout(() => {
+            modalOverlay.classList.remove('active');
+            requestForm.classList.remove('hidden');
+            modalSuccess.classList.remove('active');
+            requestForm.reset();
+        }, 3000);
+    })
+    .catch(() => {
+        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+    });
+});
     </script>
 
 
