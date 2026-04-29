@@ -131,7 +131,104 @@
             .burger-btn.active span:nth-child(3) {
                 transform: translateY(-9px) rotate(-45deg);
             }
+        /* ===== НАШИ КЕЙСЫ ===== */
+        .cases-block {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
 
+            .cases-block h2 {
+                text-align: center;
+                font-size: 32px;
+                color: #fff;
+                margin-bottom: 40px;
+            }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .case-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+            .case-card:hover {
+                border-color: #ff5722;
+                transform: translateY(-3px);
+            }
+
+        .case-badge {
+            display: inline-block;
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .case-card h4 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 15px;
+        }
+
+        .case-card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0 0 10px;
+        }
+
+        .case-card strong {
+            color: #ff5722;
+        }
+
+        /* ===== БЛОК С КАРТИНКОЙ ===== */
+        .image-banner {
+            position: relative;
+            margin: 60px 0 0;
+            overflow: hidden;
+            max-height: 500px;
+        }
+
+        .image-banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .image-banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 60px 30px 40px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            color: #fff;
+        }
+
+            .image-banner-overlay h2 {
+                font-size: 32px;
+                margin: 0 0 10px;
+            }
+
+            .image-banner-overlay p {
+                font-size: 16px;
+                margin: 0;
+                opacity: 0.9;
+            }
         /* ===== АДАПТИВ: ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ ===== */
         @media (max-width: 1000px) {
 
@@ -850,7 +947,39 @@
             <p>Да, это частая ситуация в старых домах. Скрутку алюминия с медью делаем только через клеммники или гильзы.</p>
         </div>
     </div>
+    <!-- ===== НАШИ КЕЙСЫ ===== -->
+    <div class="cases-block">
+        <h2>Реальные ситуации</h2>
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-badge">Кейс 1</div>
+                <h4>Искрила розетка — пахло гарью</h4>
+                <p><strong>Было:</strong> старая алюминиевая проводка, скрутка окислилась, контакт грелся. Хозяева боялись включать стиралку.</p>
+                <p><strong>Сделали:</strong> заменили участок на медь, установили новую розетку с заземлением, протянули все винты в щитке. За 1,5 часа проблема ушла.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-badge">Кейс 2</div>
+                <h4>Выбивал автомат при включении чайника</h4>
+                <p><strong>Было:</strong> на одну линию 16А посажены кухня и комната. Чайник + микроволновка = перегруз.</p>
+                <p><strong>Сделали:</strong> разделили линии, поставили отдельный автомат на кухню, заменили старую розетку. Теперь можно греть и варить одновременно.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-badge">Кейс 3</div>
+                <h4>Часть люстр перестала гореть</h4>
+                <p><strong>Было:</strong> пропала фаза в трёхкомнатной квартире. Свет то есть, то нет. Электрик из ЖЭКа разводил руками.</p>
+                <p><strong>Сделали:</strong> нашли обрыв в распределительной коробке под натяжным потолком. Восстановили без штробления, через клеммники WAGO.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- ===== БЛОК С КАРТИНКОЙ ===== -->
+    <div class="image-banner">
+        <img src="4.jpg" alt="Наша работа" class="image-banner-img">
+        <div class="image-banner-overlay">
+            <h2>Работаем с душой и по ГОСТу</h2>
+            <p>Каждый объект — наша репутация. Поэтому делаем так, как для себя.</p>
+        </div>
+    </div>
     <!-- ===== ПРИЗЫВ ===== -->
     <div class="cta-block">
         <h2>Не ждите, пока искра станет проблемой</h2>
@@ -862,15 +991,14 @@
     <!--   (тут будешь вставлять новые секции)   -->
     <!-- ========================================= -->
     <!-- ===== СКРИПТЫ ===== -->
-    <script>
-        // Бургер-меню
+    <script>// Бургер-меню
         const burgerBtn = document.getElementById('burgerBtn');
         const navMenu = document.getElementById('navMenu');
         if (burgerBtn) {
-        burgerBtn.addEventListener('click', function () {
-        burgerBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        });
+            burgerBtn.addEventListener('click', function () {
+                burgerBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
         }
 
         // ===== МОДАЛЬНОЕ ОКНО =====
@@ -882,63 +1010,62 @@
 
         // Открыть окно по кнопке "Оставить заявку"
         if (btnRequest) {
-        btnRequest.addEventListener('click', function () {
-        modalOverlay.classList.add('active');
-        });
+            btnRequest.addEventListener('click', function () {
+                modalOverlay.classList.add('active');
+            });
         }
 
         // Закрыть окно по крестику
         if (modalClose) {
-        modalClose.addEventListener('click', function () {
-        modalOverlay.classList.remove('active');
-        });
+            modalClose.addEventListener('click', function () {
+                modalOverlay.classList.remove('active');
+            });
         }
 
         // Закрыть окно при клике на фон
         if (modalOverlay) {
-        modalOverlay.addEventListener('click', function (e) {
-        if (e.target === modalOverlay) {
-        modalOverlay.classList.remove('active');
-        }
-        });
+            modalOverlay.addEventListener('click', function (e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                }
+            });
         }
 
         // Отправка формы
         if (requestForm) {
-        requestForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+            requestForm.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-        const name = document.getElementById('nameInput').value;
-        const phone = document.getElementById('phoneInput').value;
-        const question = document.getElementById('questionInput').value || 'Не указан';
+                const name = document.getElementById('nameInput').value;
+                const phone = document.getElementById('phoneInput').value;
+                const question = document.getElementById('questionInput').value || 'Не указан';
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
 
-        fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-        name: name,
-        phone: phone,
-        question: question
-        })
-        })
-        .then(() => {
-        requestForm.classList.add('hidden');
-        modalSuccess.classList.add('active');
-        setTimeout(() => {
-        modalOverlay.classList.remove('active');
-        requestForm.classList.remove('hidden');
-        modalSuccess.classList.remove('active');
-        requestForm.reset();
-        }, 3000);
-        })
-        .catch(() => {
-        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
-        });
-        });
-        }
-    </script>
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        question: question
+                    })
+                })
+                    .then(() => {
+                        requestForm.classList.add('hidden');
+                        modalSuccess.classList.add('active');
+                        setTimeout(() => {
+                            modalOverlay.classList.remove('active');
+                            requestForm.classList.remove('hidden');
+                            modalSuccess.classList.remove('active');
+                            requestForm.reset();
+                        }, 3000);
+                    })
+                    .catch(() => {
+                        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+                    });
+            });
+        }</script>
 </body>
 </html>
