@@ -560,7 +560,90 @@
                 background-color: #e64a19;
                 transform: scale(1.05);
             }
+        /* ===== ПОДВАЛ ===== */
+        .site-footer {
+            background-color: #111;
+            border-top: 1px solid #222;
+            padding: 40px 30px 30px;
+            margin-top: 60px;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 16px;
+            margin: 0 0 15px;
+        }
+        .footer-col a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: #ff5722;
+        }
 
+        /* Центр */
+        .footer-center {
+            text-align: center;
+        }
+        .footer-note {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+        .footer-copy {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Соцсети */
+        .footer-social {
+            text-align: right;
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        .social-link {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-link.vk {
+            background-color: #0077FF;
+            color: #fff;
+        }
+        .social-link.vk:hover {
+            background-color: #0066DD;
+        }
+        .social-link.tg {
+            background-color: #2AABEE;
+            color: #fff;
+        }
+        .social-link.tg:hover {
+            background-color: #1E96D4;
+        }
         /* ===== АДАПТИВ ===== */
         @media (max-width: 1000px) {
             .header {
@@ -603,7 +686,17 @@
                 width: 100%;
                 margin-top: 10px;
             }
-
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-social {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
             
         }
 
@@ -1027,5 +1120,33 @@
         });
     }
 </script>
+        <!-- ===== ПОДВАЛ ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- Левая колонка: ссылки -->
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="about.html">О нас</a>
+                <a href="#feedback">Оставить отзыв</a>
+            </div>
+
+            <!-- Центр: памятка и копирайт -->
+            <div class="footer-col footer-center">
+                <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
+                <p class="footer-copy">© 2026 ELECTRO-LED</p>
+            </div>
+
+            <!-- Правая колонка: соцсети -->
+            <div class="footer-col footer-social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="https://vk.com/твой-профиль" target="_blank" class="social-link vk">VK</a>
+                    <a href="https://t.me/твой-профиль" target="_blank" class="social-link tg">TG</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 </body>
 </html>
