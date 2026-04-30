@@ -662,6 +662,9 @@
                 border-color: #ff5722;
             }
 
+        .parallax-mobile-img {
+            display: none;
+        }
         /* ===== АДАПТИВ ===== */
         @media (max-width: 1000px) {
             .header {
@@ -718,9 +721,9 @@
             .social-links {
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 1000px) {
+
+
             .hero h1 {
                 font-size: 28px;
             }
@@ -735,6 +738,69 @@
 
             .step {
                 flex-direction: column;
+            }
+
+
+            /* Отключаем параллакс */
+            /* Отключаем параллакс */
+            .hero {
+                background-attachment: scroll !important;
+                background-image: none !important;
+                height: auto;
+                min-height: auto;
+                padding: 20px;
+                display: block;
+                position: relative;
+            }
+
+                .hero::before {
+                    display: none;
+                }
+
+            /* Картинка */
+            .parallax-mobile-img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                filter: brightness(0.5);
+            }
+
+            /* Текст поверх картинки, по центру */
+            .hero h1,
+            .hero p,
+            .hero .btn-hero {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+                text-align: center;
+                width: 90%;
+                margin: 0;
+            }
+
+            .hero h1 {
+                top: 25%;
+                font-size: 26px;
+                color: #fff;
+            }
+
+            .hero p {
+                top: 50%;
+                font-size: 15px;
+                color: #ddd;
+            }
+
+                .hero p + p {
+                    top: 40%;
+                }
+
+                    .hero p + p + p {
+                        top: 60%;
+                    }
+
+            .hero .btn-hero {
+                top: 80%;
             }
         }
     </style>
@@ -765,12 +831,13 @@
 
     <!-- ===== БАННЕР ===== -->
     <div class="hero">
+        <img src="1.jpg" alt="Фон" class="parallax-mobile-img">
         <h1>Электромонтажные работы</h1>
         <p>От замены розетки до полной разводки электрики в квартире, доме или офисе. Работаем с проектами любой сложности.</p>
         <p>Работаем по договору. Цены ориентировочные, точную стоимость озвучим после осмотра объекта.</p>
         <p><span class="highlight">Полная стоимость всех услуг доступна по заявке</span>.</p>
-       
-            <button class="btn-hero" onclick="document.querySelector('.btn-request').click()">Рассчитать стоимость</button>
+
+        <button class="btn-hero" onclick="document.querySelector('.btn-request').click()">Рассчитать стоимость</button>
     </div>
 
     <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
