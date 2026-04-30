@@ -1,19 +1,20 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
 
-    ym(108981616, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        ym(108981616, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <title>Главная страница</title>
     <style>
@@ -22,7 +23,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        
+
 
         /* ========================================= */
         /*   СЕКЦИЯ 1: ЧЕРНАЯ ПОЛОСКА (ШАПКА)      */
@@ -39,7 +40,7 @@
         }
 
         /* Название компании */
-       
+
 
         /* ===== БЛОК С КНОПКАМИ УСЛУГ ===== */
         .nav-menu {
@@ -111,7 +112,7 @@
 
 
         /* ===== АДАПТИВ: ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
-       
+
 
 
         .section-2 {
@@ -167,40 +168,125 @@
             .slide-video.active {
                 opacity: 1;
             }
-            /* ===== БУРГЕР-КНОПКА ===== */
-.burger-btn {
-    display: none;          /* На десктопе скрыта */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;          /* Чтобы была выше меню */
-}
+        /* ===== БУРГЕР-КНОПКА ===== */
+        .burger-btn {
+            display: none; /* На десктопе скрыта */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1000; /* Чтобы была выше меню */
+        }
 
-/* Три полоски */
-.burger-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: 0.3s;
-}
+            /* Три полоски */
+            .burger-btn span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
 
-/* Анимация бургера в крестик (будет добавляться классом) */
-.burger-btn.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-.burger-btn.active span:nth-child(2) {
-    opacity: 0;
-}
-.burger-btn.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
+            /* Анимация бургера в крестик (будет добавляться классом) */
+            .burger-btn.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .burger-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger-btn.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+                .site-footer {
+                    background-color: #111;
+                    border-top: 1px solid #222;
+                    padding: 40px 30px 30px;
+                    margin-top: 60px;
+                }
+
+                .footer-inner {
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 40px;
+                    flex-wrap: wrap;
+                }
+
+                .footer-col {
+                    flex: 1;
+                    min-width: 200px;
+                }
+
+                    .footer-col h4 {
+                        color: #fff;
+                        font-size: 16px;
+                        margin: 0 0 15px;
+                    }
+
+                    .footer-col a {
+                        display: block;
+                        color: #999;
+                        text-decoration: none;
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-col a:hover {
+                            color: #ff5722;
+                        }
+                /* Центр */
+                .footer-center {
+                    text-align: center;
+                }
+
+                .footer-note {
+                    color: #666;
+                    font-size: 12px;
+                    line-height: 1.6;
+                    margin: 0 0 15px;
+                }
+
+                .footer-copy {
+                    color: #555;
+                    font-size: 13px;
+                    margin: 0;
+                }
+                /* Соцсети */
+                .footer-social {
+                    text-align: right;
+                }
+                /* Соцсети */
+                .social-links {
+                    display: flex;
+                    gap: 12px;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+
+                .social-pic {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    transition: 0.3s;
+                    border: 2px solid #333;
+                }
+
+                    .social-pic:hover {
+                        transform: scale(1.15);
+                        border-color: #ff5722;
+                    }
+            
         /* ===== АДАПТИВ: ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
         @media (max-width: 1000px) {
 
@@ -249,7 +335,21 @@
                 width: 100%;
                 margin-top: 10px;
             }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
         }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -613,6 +713,43 @@
     </script>
 
 
+    <footer class="site-footer">
+        <div class="footer-inner">
 
+            <!-- Левая колонка: ссылки -->
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="about.html">О нас</a>
+                <a href="#feedback">Оставить отзыв</a>
+            </div>
+
+            <!-- Центр: памятка и копирайт -->
+            <div class="footer-col footer-center">
+                <p class="footer-note">Электромонтажные работы в Нижнем Новгороде</p>
+                <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
+                <p class="footer-copy">© 2026 ELECTRO-LED</p>
+            </div>
+
+            <!-- Правая колонка: соцсети -->
+            <div class="footer-col footer-social">
+                <h4>Вы можете найти нас здесь:</h4>
+                <div class="social-links">
+                    <a href="https://vk.com/твой-профиль" target="_blank" title="ВКонтакте">
+                        <img src="3.jpg" alt="VK" class="social-pic">
+                    </a>
+                    <a href="https://t.me/твой-профиль" target="_blank" title="Telegram">
+                        <img src="5.jpg" alt="TG" class="social-pic">
+                    </a>
+                    <a href="https://www.avito.ru/" target="_blank" title="Авито">
+                        <img src="6.jpg" alt="Авито" class="social-pic">
+                    </a>
+                    <a href="https://profi.ru/" target="_blank" title="ПрофиРУ">
+                        <img src="7.jpg" alt="ПрофиРУ" class="social-pic">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 </body>
 </html>
