@@ -1,19 +1,20 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
 
-    ym(108981616, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        ym(108981616, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <title>Светодиодные панели</title>
 
@@ -21,7 +22,7 @@
 
 
 
-    
+
     <style>
         body {
             background-color: #000000;
@@ -151,6 +152,91 @@
                 transform: translateY(-9px) rotate(-45deg);
             }
 
+
+        .site-footer {
+            background-color: #111;
+            border-top: 1px solid #222;
+            padding: 40px 30px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-col h4 {
+                color: #fff;
+                font-size: 16px;
+                margin: 0 0 15px;
+            }
+
+            .footer-col a {
+                display: block;
+                color: #999;
+                text-decoration: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+                transition: color 0.3s;
+            }
+
+                .footer-col a:hover {
+                    color: #ff5722;
+                }
+
+        /* Центр */
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-note {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        .footer-copy {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Соцсети */
+        .footer-social {
+            text-align: right;
+        }
+        /* Соцсети */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .social-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: 0.3s;
+            border: 2px solid #333;
+        }
+
+            .social-pic:hover {
+                transform: scale(1.15);
+                border-color: #ff5722;
+            }
+
         /* ===== АДАПТИВ: ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ ===== */
         @media (max-width: 1000px) {
 
@@ -193,6 +279,19 @@
                 order: 4;
                 width: 100%;
                 margin-top: 10px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
 
@@ -346,6 +445,7 @@
         .modal-form.hidden {
             display: none;
         }
+        
     </style>
 </head>
 <body>
@@ -422,84 +522,121 @@
     <!-- ========================================= -->
     <!-- ===== СКРИПТЫ ===== -->
     <script>
-    // Бургер-меню
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (burgerBtn) {
-        burgerBtn.addEventListener('click', function () {
-            burgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // ===== МОДАЛЬНОЕ ОКНО =====
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalClose = document.getElementById('modalClose');
-    const btnRequest = document.querySelector('.btn-request');
-    const requestForm = document.getElementById('requestForm');
-    const modalSuccess = document.getElementById('modalSuccess');
-
-    // Открыть окно по кнопке "Оставить заявку"
-    if (btnRequest) {
-        btnRequest.addEventListener('click', function () {
-            modalOverlay.classList.add('active');
-        });
-    }
-
-    // Закрыть окно по крестику
-    if (modalClose) {
-        modalClose.addEventListener('click', function () {
-            modalOverlay.classList.remove('active');
-        });
-    }
-
-    // Закрыть окно при клике на фон
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function (e) {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-            }
-        });
-    }
-
-    // Отправка формы
-    if (requestForm) {
-        requestForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('nameInput').value;
-            const phone = document.getElementById('phoneInput').value;
-            const question = document.getElementById('questionInput').value || 'Не указан';
-
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
-
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    question: question
-                })
-            })
-            .then(() => {
-                requestForm.classList.add('hidden');
-                modalSuccess.classList.add('active');
-                setTimeout(() => {
-                    modalOverlay.classList.remove('active');
-                    requestForm.classList.remove('hidden');
-                    modalSuccess.classList.remove('active');
-                    requestForm.reset();
-                }, 3000);
-            })
-            .catch(() => {
-                alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+        // Бургер-меню
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        if (burgerBtn) {
+            burgerBtn.addEventListener('click', function () {
+                burgerBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
             });
-        });
-    }
-</script>
+        }
 
+        // ===== МОДАЛЬНОЕ ОКНО =====
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const btnRequest = document.querySelector('.btn-request');
+        const requestForm = document.getElementById('requestForm');
+        const modalSuccess = document.getElementById('modalSuccess');
 
+        // Открыть окно по кнопке "Оставить заявку"
+        if (btnRequest) {
+            btnRequest.addEventListener('click', function () {
+                modalOverlay.classList.add('active');
+            });
+        }
+
+        // Закрыть окно по крестику
+        if (modalClose) {
+            modalClose.addEventListener('click', function () {
+                modalOverlay.classList.remove('active');
+            });
+        }
+
+        // Закрыть окно при клике на фон
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', function (e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                }
+            });
+        }
+
+        // Отправка формы
+        if (requestForm) {
+            requestForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('nameInput').value;
+                const phone = document.getElementById('phoneInput').value;
+                const question = document.getElementById('questionInput').value || 'Не указан';
+
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        question: question
+                    })
+                })
+                    .then(() => {
+                        requestForm.classList.add('hidden');
+                        modalSuccess.classList.add('active');
+                        setTimeout(() => {
+                            modalOverlay.classList.remove('active');
+                            requestForm.classList.remove('hidden');
+                            modalSuccess.classList.remove('active');
+                            requestForm.reset();
+                        }, 3000);
+                    })
+                    .catch(() => {
+                        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+                    });
+            });
+        }
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- Левая колонка: ссылки -->
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="about.html">О нас</a>
+                <a href="#feedback">Оставить отзыв</a>
+            </div>
+
+            <!-- Центр: памятка и копирайт -->
+            <div class="footer-col footer-center">
+                <p class="footer-note">Электромонтажные работы в Нижнем Новгороде</p>
+                <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
+                <p class="footer-copy">© 2026 ELECTRO-LED</p>
+            </div>
+
+            <!-- Правая колонка: соцсети -->
+            <div class="footer-col footer-social">
+                <h4>Вы можете найти нас здесь:</h4>
+                <div class="social-links">
+                    <a href="https://vk.com/твой-профиль" target="_blank" title="ВКонтакте">
+                        <img src="3.jpg" alt="VK" class="social-pic">
+                    </a>
+                    <a href="https://t.me/твой-профиль" target="_blank" title="Telegram">
+                        <img src="5.jpg" alt="TG" class="social-pic">
+                    </a>
+                    <a href="https://www.avito.ru/" target="_blank" title="Авито">
+                        <img src="6.jpg" alt="Авито" class="social-pic">
+                    </a>
+                    <a href="https://profi.ru/" target="_blank" title="ПрофиРУ">
+                        <img src="7.jpg" alt="ПрофиРУ" class="social-pic">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 </body>
 </html>
