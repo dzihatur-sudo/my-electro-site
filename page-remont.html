@@ -242,9 +242,19 @@
                 margin: 0;
                 opacity: 0.9;
             }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+            text-decoration: none; /* ← добавь эту строку */
+            color: #4842ce; /* ← и эту, чтобы цвет остался белым */
+        }
+        /* ===== АДАПТИВ: ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ ===== */
         /* ===== АДАПТИВ: ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ ===== */
         @media (max-width: 1000px) {
 
+            /* Шапка и бургер */
             .header {
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -286,45 +296,42 @@
                 margin-top: 10px;
             }
 
-
-            /* Отключаем параллакс на телефоне */
-            .parallax-section {
-                background-attachment: scroll;
-                background-image: none !important; /* Убираем фоновую картинку */
-                height: auto;
-                min-height: auto;
-                padding: 20px;
+            /* Адаптив страницы */
+            .remont-hero h1 {
+                font-size: 28px;
             }
 
-                .parallax-section::before {
-                    display: none; /* Убираем затемнение */
-                }
-
-            /* Показываем обычную картинку */
-            .parallax-mobile-img {
-                display: block;
-                margin-bottom: 20px;
+            .remont-cards {
+                flex-direction: column;
             }
 
-            .parallax-content h2 {
-                font-size: 24px;
-                color: #fff;
+            .tools-grid {
+                flex-direction: column;
             }
 
-            .parallax-content p {
-                font-size: 16px;
-                color: #ccc;
+            .step {
+                flex-direction: column;
+            }
+
+
+
+            /* Футер */
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            flex-shrink: 0;
-            text-decoration: none; /* ← добавь эту строку */
-            color: #28287f; /* ← и эту, чтобы цвет остался белым */
-        }
+      
 
 
 
@@ -802,56 +809,22 @@
                 border-color: #ff5722;
             }
         /* Адаптив для телефонов */
-        @media (max-width: 1000px) {
-            .remont-hero h1 {
-                font-size: 28px;
-            }
-
-            .remont-cards {
-                flex-direction: column;
-            }
-
-            .tools-grid {
-                flex-direction: column;
-            }
-
-            .step {
-                flex-direction: column;
-            }
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-            }
-
-            .footer-social {
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-        }
 
 
 
-        /* ===== ПАРАЛЛАКС-СЕКЦИЯ ===== */
+
+        /* ===== ПАРАЛЛАКС-СЕКЦИЯ (ДЕСКТОП) ===== */
         .parallax-section {
-            /* Картинка на фон */
             background-image: url('parallax-bg.jpg');
-            /* Вот главная магия */
-            background-attachment: fixed; /* Фон зафиксирован, не скроллится */
-            background-size: cover; /* Растягиваем на всю секцию */
-            background-position: center; /* Центрируем */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            /* Размеры секции */
-            height: 70vh; /* 70% высоты экрана */
-            min-height: 400px; /* Минимум 400px */
-            /* Чтобы текст внутри центрировался */
+            height: 70vh;
+            min-height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Лёгкий затемняющий слой поверх картинки (чтобы текст читался) */
             position: relative;
         }
 
@@ -862,11 +835,12 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0,0,0, 0.5); /* Чёрный, прозрачность 50% */
+                background-color: rgba(0,0,0, 0.5);
+                z-index: 0;
             }
 
         .parallax-content {
-            position: relative; /* Чтобы текст был над затемнением */
+            position: relative;
             z-index: 1;
             text-align: center;
             color: white;
@@ -876,7 +850,7 @@
             .parallax-content h2 {
                 font-size: 42px;
                 margin-bottom: 15px;
-                text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Тень для читаемости */
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             }
 
             .parallax-content p {
@@ -884,24 +858,63 @@
                 opacity: 0.9;
             }
 
-
-
-
-            .parallax-content h2 {
-                font-size: 28px;
-            }
-
-            .parallax-content p {
-                font-size: 16px;
-            }
-
-
         /* Картинка для телефона (скрыта на десктопе) */
         .parallax-mobile-img {
             display: none;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+        }
+
+        /* ===== АДАПТИВ: ТЕЛЕФОН ===== */
+        @media (max-width: 1000px) {
+            /* Отключаем параллакс */
+            /* Отключаем параллакс */
+            .parallax-section {
+                background-image: none !important;
+                background-attachment: scroll !important;
+                height: auto;
+                min-height: auto;
+                padding: 20px;
+                display: block;
+                position: relative;
+            }
+
+                .parallax-section::before {
+                    display: none;
+                }
+
+            /* Картинка */
+            .parallax-mobile-img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                position: relative;
+                z-index: 0;
+                filter: brightness(0.5);
+            }
+
+            /* Текст поверх картинки */
+            .parallax-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                text-align: center;
+                padding: 0 20px;
+                width: 100%;
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+                .parallax-content h2 {
+                    font-size: 24px;
+                    color: #fff;
+                }
+
+                .parallax-content p {
+                    font-size: 16px;
+                    color: #ccc;
+                }
         }
     </style>
 </head>
