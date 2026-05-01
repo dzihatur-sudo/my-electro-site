@@ -12,10 +12,20 @@
         })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
 
         ym(108981616, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+        
+        
+        
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Для Android (плитка на главном экране) -->
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>Главная страница</title>
     <style>
         body {
@@ -205,88 +215,941 @@
                 transform: translateY(-9px) rotate(-45deg);
             }
 
-                .site-footer {
-                    background-color: #111;
-                    border-top: 1px solid #222;
-                    padding: 40px 30px 30px;
-                    margin-top: 60px;
+        .site-footer {
+            background-color: #111;
+            border-top: 1px solid #222;
+            padding: 40px 30px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-col h4 {
+                color: #fff;
+                font-size: 16px;
+                margin: 0 0 15px;
+            }
+
+            .footer-col a {
+                display: block;
+                color: #999;
+                text-decoration: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+                transition: color 0.3s;
+            }
+
+                .footer-col a:hover {
+                    color: #ff5722;
+                }
+        /* Центр */
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-note {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        .footer-copy {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+        /* Соцсети */
+        .footer-social {
+            text-align: right;
+        }
+        /* Соцсети */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .social-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: 0.3s;
+            border: 2px solid #333;
+        }
+
+            .social-pic:hover {
+                transform: scale(1.15);
+                border-color: #ff5722;
+            }
+        /* ===== БАННЕР ===== */
+        .main-hero {
+            position: relative;
+            overflow: hidden;
+            height: 90vh;
+            min-height: 500px;
+        }
+
+        .main-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3);
+            display: block;
+        }
+
+        .main-hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            width: 90%;
+            max-width: 850px;
+        }
+
+            .main-hero-content h1 {
+                font-family: 'Lora', serif;
+                font-size: 46px;
+                margin-bottom: 20px;
+                text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+            }
+
+            .main-hero-content p {
+                font-size: 20px;
+                opacity: 0.9;
+                margin-bottom: 30px;
+            }
+
+        .main-hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bt-main {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+            .bt-main:hover {
+                background-color: #e64a19;
+                transform: scale(1.05);
+            }
+
+        .bt-outline {
+            background-color: transparent;
+            border: 2px solid #ff5722;
+        }
+
+            .bt-outline:hover {
+                background-color: #ff5722;
+            }
+
+        /* ===== ПРЕИМУЩЕСТВА ===== */
+        .main-advantages {
+            background-color: #111;
+            padding: 60px 30px;
+        }
+
+        .main-advantages-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .adv-item {
+            text-align: center;
+            padding: 25px 15px;
+            border: 1px solid #222;
+            border-radius: 12px;
+            background-color: #0a0a0a;
+            transition: 0.3s;
+        }
+
+            .adv-item:hover {
+                border-color: #ff5722;
+                transform: translateY(-3px);
+            }
+
+        .adv-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .adv-item h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .adv-item p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== КАК МЫ РАБОТАЕМ ===== */
+        .main-steps {
+            background-color: #000;
+            padding: 70px 30px;
+        }
+
+            .main-steps h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 50px;
+            }
+
+        .main-steps-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .step-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+            .step-card:hover {
+                border-color: #ff5722;
+            }
+
+        .step-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ===== FAQ ===== */
+        .main-faq {
+            background-color: #000;
+            padding: 70px 30px;
+        }
+
+            .main-faq h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 50px;
+            }
+
+        .main-faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-row {
+            border-bottom: 1px solid #222;
+            padding: 25px 0;
+        }
+
+        .faq-q {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+            .faq-q:hover {
+                color: #ff5722;
+            }
+
+        .faq-a {
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ===== ПРИЗЫВ ===== */
+        .main-cta {
+            background-color: #0a0a0a;
+            padding: 80px 30px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+            .main-cta h2 {
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            .main-cta p {
+                font-size: 18px;
+                color: #bbb;
+                margin-bottom: 30px;
+            }
+        /* ===== ПРОМО LED-ПАНЕЛЕЙ ===== */
+        .main-led-promo {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .main-led-promo-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .main-led-promo-img {
+            flex: 0 0 46%;
+        }
+
+            .main-led-promo-img img {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                display: block;
+                border: 1px solid #222;
+            }
+
+        .main-led-promo-text {
+            flex: 1;
+        }
+
+            .main-led-promo-text h2 {
+                font-family: 'Lora', serif;
+                font-size: 32px;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
+            .main-led-promo-text p {
+                font-size: 17px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 25px;
+            }
+        /* ===== ПРЕИМУЩЕСТВА LED-ПАНЕЛЕЙ ===== */
+        .main-led-benefits {
+            background-color: #000;
+            padding: 70px 30px;
+        }
+
+            .main-led-benefits h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 15px;
+            }
+
+        .main-led-subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .main-led-benefits-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+            .benefit-card:hover {
+                border-color: #ff5722;
+                transform: translateY(-3px);
+            }
+
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== ГДЕ МОЖНО УСТАНОВИТЬ ===== */
+        .main-led-places {
+            background-color: #0a0a0a;
+            padding: 70px 30px;
+        }
+
+            .main-led-places h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 40px;
+            }
+
+        .main-led-places-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .place-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            color: #ccc;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+            .place-card:hover {
+                border-color: #ff5722;
+                color: #fff;
+            }
+
+        /* ===== FAQ LED ===== */
+        .main-led-faq {
+            background-color: #000;
+            padding: 70px 30px;
+        }
+
+            .main-led-faq h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 50px;
+            }
+
+        /* ===== ЗАВЕРШАЮЩИЙ БЛОК С КАРТИНКОЙ ===== */
+        .main-led-final {
+            background-color: #0a0a0a;
+            padding: 80px 30px;
+        }
+
+        .main-led-final-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .main-led-final-text {
+            flex: 1;
+        }
+
+            .main-led-final-text h2 {
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            .main-led-final-text p {
+                font-size: 17px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 25px;
+            }
+
+        .main-led-final-img {
+            flex: 0 0 46%;
+        }
+
+            .main-led-final-img img {
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid #222;
+            }
+        /* ===== ПРОМО ЭЛЕКТРОМОНТАЖ ===== */
+        /* ===== БАННЕР ЭЛЕКТРОМОНТАЖ ===== */
+        .montazh-hero {
+            position: relative;
+            overflow: hidden;
+            height: 70vh;
+            min-height: 400px;
+        }
+
+        .montazh-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.55);
+            display: block;
+        }
+
+        .montazh-hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            width: 90%;
+            max-width: 800px;
+        }
+
+            .montazh-hero-content h2 {
+                font-family: 'Lora', serif;
+                font-size: 44px;
+                text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+            }
+
+        /* ===== ТЕКСТОВЫЙ БЛОК ===== */
+        .montazh-about {
+            background-color: #000;
+            padding: 60px 30px;
+        }
+
+        .montazh-about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            .montazh-about-inner p {
+                font-size: 18px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
+
+            .montazh-about-inner .bt-main {
+                margin-top: 10px;
+            }
+
+        /* ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== */
+        /* ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== */
+        .main-remont {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .main-remont-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+            .main-remont-inner h2 {
+                font-family: 'Lora', serif;
+                font-size: 36px;
+                color: #fff;
+                text-align: center;
+                margin: 0 0 20px;
+            }
+
+        .main-remont-intro {
+            text-align: center;
+            font-size: 18px;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .main-remont-img {
+            margin-bottom: 40px;
+        }
+
+            .main-remont-img img {
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid #222;
+                display: block;
+            }
+
+        .main-remont-text h3 {
+            font-size: 24px;
+            color: #ff5722;
+            margin: 35px 0 20px;
+        }
+
+        .main-remont-text p {
+            font-size: 17px;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .remont-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 10px;
+        }
+
+        .remont-list-item {
+            border-left: 3px solid #ff5722;
+            padding-left: 16px;
+        }
+
+            .remont-list-item strong {
+                display: block;
+                color: #fff;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .remont-list-item span {
+                color: #999;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+        .main-remont-text .bt-main {
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .main-remont-inner h2 {
+                font-size: 26px;
+            }
+
+            .main-remont-text h3 {
+                font-size: 20px;
+            }
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .main-remont-inner {
+                flex-direction: column;
+            }
+
+            .main-remont-img {
+                flex: auto;
+                position: static;
+                order: 1;
+            }
+
+            .main-remont-text {
+                order: 2;
+            }
+
+                .main-remont-text h2 {
+                    font-size: 26px;
                 }
 
-                .footer-inner {
-                    max-width: 1100px;
-                    margin: 0 auto;
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 40px;
-                    flex-wrap: wrap;
+                .main-remont-text h3 {
+                    font-size: 20px;
+                }
+        }
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .montazh-hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .montazh-hero-content h2 {
+                font-size: 28px;
+            }
+
+            .montazh-about-inner p {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== ЧТО МЫ ДЕЛАЕМ ===== */
+        .main-services {
+            background-color: #0a0a0a;
+            padding: 70px 30px;
+        }
+
+            .main-services h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 50px;
+            }
+
+        .main-services-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+            .service-card:hover {
+                border-color: #ff5722;
+                transform: translateY(-3px);
+            }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== ПОЧЕМУ НАМ ДОВЕРЯЮТ ===== */
+        .main-trust {
+            background-color: #000;
+            padding: 70px 30px;
+        }
+
+            .main-trust h2 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 50px;
+            }
+
+        .main-trust-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .trust-item {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+            .trust-item:hover {
+                border-color: #ff5722;
+            }
+
+        .trust-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .trust-item h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .trust-item p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .main-montazh-promo-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .main-montazh-promo-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .main-montazh-promo-text {
+                order: 2;
+                text-align: center;
+            }
+
+                .main-montazh-promo-text h2 {
+                    font-size: 26px;
                 }
 
-                .footer-col {
-                    flex: 1;
-                    min-width: 200px;
-                }
+            .main-services h2,
+            .main-trust h2 {
+                font-size: 26px;
+            }
 
-                    .footer-col h4 {
-                        color: #fff;
-                        font-size: 16px;
-                        margin: 0 0 15px;
-                    }
+            .main-services-grid,
+            .main-trust-grid {
+                grid-template-columns: 1fr;
+            }
+        } 
 
-                    .footer-col a {
-                        display: block;
-                        color: #999;
-                        text-decoration: none;
-                        font-size: 14px;
-                        margin-bottom: 10px;
-                        transition: color 0.3s;
-                    }
 
-                        .footer-col a:hover {
-                            color: #ff5722;
-                        }
-                /* Центр */
-                .footer-center {
-                    text-align: center;
-                }
 
-                .footer-note {
-                    color: #666;
-                    font-size: 12px;
-                    line-height: 1.6;
-                    margin: 0 0 15px;
-                }
 
-                .footer-copy {
-                    color: #555;
-                    font-size: 13px;
-                    margin: 0;
-                }
-                /* Соцсети */
-                .footer-social {
-                    text-align: right;
-                }
-                /* Соцсети */
-                .social-links {
-                    display: flex;
-                    gap: 12px;
-                    justify-content: flex-end;
-                    align-items: center;
-                }
 
-                .social-pic {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    transition: 0.3s;
-                    border: 2px solid #333;
-                }
 
-                    .social-pic:hover {
-                        transform: scale(1.15);
-                        border-color: #ff5722;
-                    }
-            
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .main-led-benefits-grid,
+            .main-led-places-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-led-benefits h2,
+            .main-led-places h2,
+            .main-led-faq h2,
+            .main-led-final-text h2 {
+                font-size: 26px;
+            }
+
+            .main-led-final-inner {
+                flex-direction: column;
+            }
+
+            .main-led-final-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .main-led-final-text {
+                order: 2;
+                text-align: center;
+            }
+        }
+
+
+
+
+
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .main-led-promo-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .main-led-promo-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .main-led-promo-text {
+                order: 2;
+                text-align: center;
+            }
+
+                .main-led-promo-text h2 {
+                    font-size: 26px;
+                }
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 768px) {
+            .main-hero {
+                height: 70vh;
+                min-height: 400px;
+            }
+
+            .main-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .main-hero-content p {
+                font-size: 16px;
+            }
+
+            .main-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-advantages-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .bt-main {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+        }
         /* ===== АДАПТИВ: ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
         @media (max-width: 1000px) {
 
@@ -326,8 +1189,10 @@
 
             /* Телефон и кнопку можно оставить или спрятать — по желанию */
             .phone {
-                order: 2;
-                font-size: 14px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
             }
 
             .btn-request {
@@ -335,6 +1200,7 @@
                 width: 100%;
                 margin-top: 10px;
             }
+
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -529,42 +1395,13 @@
         </div>
 
         <!-- Телефон -->
-        <div class="phone">+7 (922) XXX-XX-XX</div>
+        <div class="phone">+79800297701</div>
 
         <!-- Кнопка заявки -->
         <button class="btn-request">Оставить заявку</button>
 
     </div>
     <!-- ===== СЕКЦИЯ 2: ТЕКСТ СЛЕВА + ВИДЕО СПРАВА ===== -->
-    <div class="section-2">
-
-        <!-- Левый блок с текстом -->
-        <div class="text-block">
-            <h2>Почему выбирают нас</h2>
-            <p>Мы занимаемся светодиодным освещением более 10 лет. Наши работы говорят сами за себя.</p>
-            <p>Справа — примеры наших проектов. Свет, который вдохновляет.</p>
-            <!-- Тут можешь дописать что угодно про компанию -->
-        </div>
-
-        <!-- Правый блок с видео -->
-        <div class="video-block">
-            <!-- Все 4 видео лежат друг на друге -->
-            <video class="slide-video active" muted playsinline>
-                <source src="video-1.mp4" type="video/mp4">
-            </video>
-            <video class="slide-video" muted playsinline>
-                <source src="video-2.mp4" type="video/mp4">
-            </video>
-            <video class="slide-video" muted playsinline>
-                <source src="video-3.mp4" type="video/mp4">
-            </video>
-
-        </div>
-
-    </div>
-
-
-
     <!-- ===== МОДАЛЬНОЕ ОКНО (ЗАЯВКА) ===== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
@@ -610,31 +1447,7 @@
     </div>
     <!-- Тут будет следующая секция -->
     <script>
-        // Находим все видео
-        let videos = document.querySelectorAll('.slide-video');
-        let currentIndex = 0; // Номер текущего видео (0 = первое)
 
-        // Функция переключения
-        function switchVideo() {
-            // Убираем класс active у текущего видео (оно плавно исчезнет)
-            videos[currentIndex].classList.remove('active');
-
-            // Переходим к следующему (или к первому, если конец)
-            currentIndex = (currentIndex + 1) % videos.length;
-
-            // Добавляем класс active следующему видео (оно плавно появится)
-            videos[currentIndex].classList.add('active');
-
-            // Запускаем видео заново
-            videos[currentIndex].currentTime = 0;
-            videos[currentIndex].play();
-        }
-
-        // Запускаем первое видео сразу
-        videos[0].play();
-
-        // Переключаем видео каждые 5 секунд
-        setInterval(switchVideo, 4000);
 
         // Бургер-меню
         const burgerBtn = document.getElementById('burgerBtn');
@@ -710,7 +1523,404 @@
                     alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
                 });
         });
+
+
+
+
+
+        // ===== ОКНО ОТЗЫВА =====
+        const reviewOverlay = document.getElementById('reviewOverlay');
+        const reviewClose = document.getElementById('reviewClose');
+        const reviewForm = document.getElementById('reviewForm');
+        const reviewSuccess = document.getElementById('reviewSuccess');
+
+        // Открыть по ссылке в подвале
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.getAttribute('href') === '#feedback') {
+                e.preventDefault();
+                if (reviewOverlay) reviewOverlay.classList.add('active');
+            }
+        });
+
+        // Закрыть
+        if (reviewClose) {
+            reviewClose.addEventListener('click', function () {
+                reviewOverlay.classList.remove('active');
+            });
+        }
+        if (reviewOverlay) {
+            reviewOverlay.addEventListener('click', function (e) {
+                if (e.target === reviewOverlay) reviewOverlay.classList.remove('active');
+            });
+        }
+
+        // Отправка
+        if (reviewForm) {
+            reviewForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('reviewName').value;
+                const phone = document.getElementById('reviewPhone').value || 'Не указан';
+                const text = document.getElementById('reviewText').value;
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        question: 'ОТЗЫВ: ' + text
+                    })
+                })
+                    .then(() => {
+                        reviewForm.classList.add('hidden');
+                        reviewSuccess.classList.add('active');
+                        setTimeout(() => {
+                            reviewOverlay.classList.remove('active');
+                            reviewForm.classList.remove('hidden');
+                            reviewSuccess.classList.remove('active');
+                            reviewForm.reset();
+                        }, 3000);
+                    })
+                    .catch(() => alert('Ошибка отправки. Позвоните нам.'));
+            });
+        }
+
+
+
+
+
+
+
     </script>
+    <!-- ===== БАННЕР ===== -->
+    <div class="main-hero">
+        <img src="20.jpg" alt="Electro-Led" class="main-hero-img">
+        <div class="main-hero-content">
+            <h1>Electro-Led — профессиональные электромонтажные работы в Нижнем Новгороде</h1>
+            <p>Светодиодные панели, монтаж проводки, ремонт и диагностика электросетей.</p>
+            <div class="main-hero-btns">
+                <button class="bt-main" onclick="document.querySelector('.btn-request').click()">Оставить заявку</button>
+                <a href="page-montazh.html" class="bt-main bt-outline">Наши услуги</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <div class="main-advantages">
+        <div class="main-advantages-inner">
+            <div class="adv-item">
+                <div class="adv-icon">🛡️</div>
+                <h4>Гарантия 6 месяцев</h4>
+                <p>На все виды работ. Если проблема вернётся — устраним бесплатно.</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon">🚗</div>
+                <h4>Бесплатный выезд</h4>
+                <p>При заказе работ мастер приезжает бесплатно в удобное время.</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon">📋</div>
+                <h4>Работаем по договору</h4>
+                <p>Прозрачная смета, фиксированные сроки, никаких скрытых доплат.</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon">⚡</div>
+                <h4>Опытные молодые специалосты</h4>
+                <p>Знаем электрику до мелочей. От розетки до полной разводки.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+    <div class="main-steps">
+        <h2>Как мы работаем</h2>
+        <div class="main-steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h4>Заявка</h4>
+                <p>Оставляете заявку или звоните. Рассказываете о задаче.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h4>Выезд мастера</h4>
+                <p>Приезжаем, оцениваем объём, озвучиваем точную стоимость.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h4>Выполнение работ</h4>
+                <p>Монтаж или ремонт — чисто, аккуратно, с соблюдением всех норм.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <h4>Сдача и гарантия</h4>
+                <p>Проверяем работу под нагрузкой, даём гарантию 6 месяцев.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- ===== МОДАЛЬНОЕ ОКНО (ОТЗЫВ) ===== -->
+    <div class="modal-overlay" id="reviewOverlay">
+        <div class="modal-window">
+            <button class="modal-close" id="reviewClose">&times;</button>
+            <h2 class="modal-title">Оставить отзыв</h2>
+            <p class="modal-subtitle">Нам важно ваше мнение. Расскажите о качестве работ.</p>
+            <form class="modal-form" id="reviewForm">
+                <input type="text" class="modal-input" placeholder="Ваше имя" id="reviewName" required>
+                <input type="tel" class="modal-input" placeholder="+7 (___) ___-__-__" id="reviewPhone">
+                <textarea class="modal-input modal-textarea" placeholder="Ваш отзыв" id="reviewText" rows="4" required></textarea>
+                <button type="submit" class="modal-submit">Отправить отзыв</button>
+            </form>
+            <div class="modal-success" id="reviewSuccess">
+                <h2>✅ Отзыв отправлен!</h2>
+                <p>Спасибо за ваш отзыв!</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ===== FAQ ===== -->
+    <div class="main-faq">
+        <h2>Частые вопросы</h2>
+        <div class="main-faq-list">
+            <div class="faq-row">
+                <div class="faq-q">Сколько стоит выезд мастера?</div>
+                <div class="faq-a">Бесплатно при заказе работ. Если только диагностика — от 500 ₽.</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">Даёте ли гарантию?</div>
+                <div class="faq-a">Да, 6 месяцев на все виды работ. Если проблема вернётся — устраним бесплатно.</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">Работаете ли по выходным?</div>
+                <div class="faq-a">Да, с 8:00 до 21:00 без выходных.</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">Нужно ли отключать электричество перед вашим приходом?</div>
+                <div class="faq-a">Нет, мы сами отключим нужную группу в щитке и всё сделаем безопасно.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПРИЗЫВ ===== -->
+    <div class="main-cta">
+        <h2>Есть вопросы или нужна консультация?</h2>
+        <p>Оставьте заявку — перезвоним в ближайшее время и всё расскажем.</p>
+        <button class="bt-main" onclick="document.querySelector('.btn-request').click()">Оставить заявку</button>
+    </div>
+    <!-- ===== ПРОМО LED-ПАНЕЛЕЙ ===== -->
+    <div class="main-led-promo">
+        <div class="main-led-promo-inner">
+            <div class="main-led-promo-img">
+                <img src="led-smooth.jpg" alt="Светодиодные панели">
+            </div>
+            <div class="main-led-promo-text">
+                <h2>Адресные светодиодные панели — освещение будущего у вас дома</h2>
+                <p>Плавное зажигание, миллионы оттенков, эффект «плавного заполнения» и управление с выключателя или датчиков. Подсветка лестниц, плинтусов, потолков и ниш — создаём свет, который меняет пространство.</p>
+                <a href="page-paneli.html" class="bt-main">Смотреть примеры</a>
+            </div>
+        </div>
+    </div>
+    <!-- ===== ПРЕИМУЩЕСТВА LED-ПАНЕЛЕЙ ===== -->
+    <div class="main-led-benefits">
+        <h2>Почему стоит выбрать адресные светодиодные панели</h2>
+        <p class="main-led-subtitle">Технология, которая меняет восприятие света в интерьере</p>
+        <div class="main-led-benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎨</div>
+                <h4>Миллионы оттенков</h4>
+                <p>Каждый диод управляется отдельно — можно создать любой цвет и плавный переход от тёплого к холодному свету.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🧠</div>
+                <h4>Умное управление</h4>
+                <p>Включайте, выключайте и меняйте сценарии. Можно настроить автоматизацию.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⭐</div>
+                <h4>Эффект «плавное заполнение»</h4>
+                <p>Рассеянный свет без видимых точек. Панель включается постепенно от начала до конца.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔋</div>
+                <h4>Экономия энергии</h4>
+                <p>Светодиоды потребляют в 5–7 раз меньше электричества, чем лампы накаливания. Срок службы — более 50 000 часов.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔇</div>
+                <h4>Бесшумная работа</h4>
+                <p>Никакого жужжания и мерцания. Идеально для спален, детских и зон отдыха.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🛠️</div>
+                <h4>Простой монтаж</h4>
+                <p>Устанавливаем в потолок, стены или ниши за 1–2 дня. Без пыли и грязи.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ГДЕ МОЖНО УСТАНОВИТЬ ===== -->
+    <div class="main-led-places">
+        <h2>Где можно установить LED-панели</h2>
+        <div class="main-led-places-grid">
+            <div class="place-card">🏠 Частные дома и коттеджи</div>
+            <div class="place-card">🏢 Квартиры и студии</div>
+            <div class="place-card">🛋️ Гостиные и спальни</div>
+            <div class="place-card">🍳 Кухни и столовые</div>
+            <div class="place-card">🚿 Ванные комнаты</div>
+            <div class="place-card">🏢 Офисы и переговорные</div>
+            <div class="place-card">🏬 Магазины и шоурумы</div>
+            <div class="place-card">🎶 Студии звукозаписи</div>
+        </div>
+    </div>
+
+    <!-- ===== FAQ LED ===== -->
+    <div class="main-led-faq">
+        <h2>Частые вопросы про LED-панели</h2>
+        <div class="main-faq-list">
+            <div class="faq-row">
+                <div class="faq-q">Сложно ли управлять панелями?</div>
+                <div class="faq-a">Нет, всё управляется через выключатели или датчики. Мы настраиваем сценарии при монтаже и показываем, как пользоваться.</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">Можно ли установить панели в уже готовый ремонт?</div>
+                <div class="faq-a">Да, мы подбираем накладные панели, которые монтируются без переделки потолка или стен.</div>
+            </div>
+            <div class="faq-row">
+                <div class="faq-q">Сколько служат светодиоды?</div>
+                <div class="faq-a">Срок службы качественных светодиодов — от 50 000 часов (это около 15 лет при ежедневном использовании по 8 часов).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ЗАВЕРШАЮЩИЙ БЛОК С КАРТИНКОЙ ===== -->
+    <div class="main-led-final">
+        <div class="main-led-final-inner">
+            <div class="main-led-final-text">
+                <h2>Свет, который вдохновляет каждый день</h2>
+                <p>Адресные LED-панели — это не просто освещение. Это настроение, уют и современный стиль вашего интерьера. Доверьте монтаж профессионалам Electro-Led и получите результат, который будет радовать вас годами.</p>
+                <button class="bt-main" onclick="document.querySelector('.btn-request').click()">Хочу такие же панели</button>
+            </div>
+            <div class="main-led-final-img">
+                <img src="23.jpg" alt="LED-панели в интерьере">
+            </div>
+        </div>
+    </div>
+    <!-- ===== ПРОМО ЭЛЕКТРОМОНТАЖ ===== -->
+    <!-- ===== БАННЕР ЭЛЕКТРОМОНТАЖ ===== -->
+    <div class="montazh-hero">
+        <img src="22.jpg" alt="Электромонтажные работы" class="montazh-hero-img">
+        <div class="montazh-hero-content">
+            <h2>Электромонтажные работы любой сложности</h2>
+        </div>
+    </div>
+
+    <!-- ===== ТЕКСТОВЫЙ БЛОК ===== -->
+    <div class="montazh-about">
+        <div class="montazh-about-inner">
+            <p>От замены одной розетки до полной разводки электрики в доме, квартире или офисе. Работаем с проектами любой сложности — от типовых до дизайнерских.</p>
+            <p>Берём на себя всё: подбор материалов, монтаж, настройку щитов, диагностику неисправностей. Вам остаётся только пользоваться.</p>
+            <a href="page-montazh.html" class="bt-main">Смотреть все услуги и цены</a>
+        </div>
+    </div>
+
+    <!-- ===== ЧТО МЫ ДЕЛАЕМ ===== -->
+    <div class="main-services">
+        <h2>Что мы делаем</h2>
+        <div class="main-services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h4>Монтаж и замена проводки</h4>
+                <p>Полная или частичная замена электропроводки в квартирах, домах и офисах. Работаем с медью и алюминием.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧰</div>
+                <h4>Сборка и настройка щитов</h4>
+                <p>Проектируем и собираем распределительные щиты любой сложности. Установка автоматов, УЗО, реле напряжения.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h4>Монтаж освещения</h4>
+                <p>Установка люстр, светильников, бра, LED-панелей, трековых систем. Подключение с выключателями и диммерами.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h4>Диагностика и ремонт</h4>
+                <p>Ищем скрытые неисправности, устраняем короткое замыкание, меняем сгоревшие автоматы и перегоревшие провода.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h4>Электрика в новостройках</h4>
+                <p>Полная разводка электрики с нуля: от вводного кабеля до последней розетки. Работаем по дизайн-проектам.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h4>Заземление и защита</h4>
+                <p>Монтаж контура заземления, установка УЗИП, защита от перенапряжения и импульсных помех.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== -->
+    <!-- ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== -->
+    <div class="main-remont">
+        <div class="main-remont-inner">
+            <h2>Ремонт и диагностика электросетей</h2>
+            <p class="main-remont-intro">Электрика — это не только монтаж нового, но и умение найти и устранить неисправность. Мы выезжаем на объекты любой сложности: от квартир до производственных помещений.</p>
+
+            <div class="main-remont-img">
+                <img src="24.jpg" alt="Ремонт и диагностика">
+            </div>
+
+            <div class="main-remont-text">
+                <h3>С чем мы работаем</h3>
+                <div class="remont-list">
+                    <div class="remont-list-item">
+                        <strong>Искрит розетка или выключатель</strong>
+                        <span>Причина — плохой контакт или износ механизма. Протягиваем винты или меняем внутренности за 15–20 минут.</span>
+                    </div>
+                    <div class="remont-list-item">
+                        <strong>Выбивает автомат при включении техники</strong>
+                        <span>Проверяем нагрузку на линию, при необходимости разделяем группы и ставим отдельный автомат.</span>
+                    </div>
+                    <div class="remont-list-item">
+                        <strong>Пахнет горелым пластиком из щитка</strong>
+                        <span>Это признак плохого контакта. Немедленно выключайте главный рубильник и звоните нам — приедем срочно.</span>
+                    </div>
+                    <div class="remont-list-item">
+                        <strong>Часть света не горит, часть — моргает</strong>
+                        <span>Ищем обрыв или плохой контакт от щитка до последней распределительной коробки. Чаще всего проблема решается за час.</span>
+                    </div>
+                    <div class="remont-list-item">
+                        <strong>Старая алюминиевая проводка греется</strong>
+                        <span>Перебираем контакты, заменяем проблемные участки на медь через клеммники WAGO или гильзы.</span>
+                    </div>
+                    <div class="remont-list-item">
+                        <strong>Нет заземления или оно не работает</strong>
+                        <span>Проверяем контур заземления, при необходимости монтируем новый. Это вопрос безопасности — не откладывайте.</span>
+                    </div>
+                </div>
+
+                <h3>Почему стоит вызвать мастера, а не чинить самому</h3>
+                <p>Электричество не прощает ошибок. Неправильно соединённые провода, слабый контакт или неверно подобранный автомат могут привести к короткому замыканию и пожару. Мы используем профессиональный инструмент, тепловизор и мультиметр, чтобы найти проблему точно и устранить её безопасно.</p>
+
+                <a href="page-remont.html" class="bt-main">Подробнее о ремонте и диагностике</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 
 
     <footer class="site-footer">
@@ -721,7 +1931,9 @@
                 <h4>Информация</h4>
                 <a href="about.html">О нас</a>
                 <a href="#feedback">Оставить отзыв</a>
+
             </div>
+
 
             <!-- Центр: памятка и копирайт -->
             <div class="footer-col footer-center">
@@ -750,6 +1962,8 @@
             </div>
 
         </div>
+
     </footer>
+
 </body>
 </html>
