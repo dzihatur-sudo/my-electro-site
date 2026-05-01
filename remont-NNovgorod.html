@@ -1,0 +1,1211 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108981616', 'ym');
+
+        ym(108981616, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Электромонтажные работы в Нижнем Новгороде</title>
+    <title>Ремони и диагностика электропроводки в Нижнем Новгороде</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #111;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 15px;
+            padding-bottom: 5px;
+            position: relative;
+            transition: color 0.3s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+            .nav-link:hover {
+                color: #ff5722;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background-color: #ff5722;
+                transition: width 0.4s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+        .phone {
+            font-size: 16px;
+            color: #ccc;
+            flex-shrink: 0;
+        }
+
+        .btn-request {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+
+            .btn-request:hover {
+                background-color: #e64a19;
+                transform: scale(1.05);
+            }
+
+        .burger-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1000;
+        }
+
+            .burger-btn span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+
+            .burger-btn.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .burger-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger-btn.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+        .cases-block {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+            .cases-block h2 {
+                font-family: 'Lora', serif;
+                text-align: center;
+                font-size: 32px;
+                color: #fff;
+                margin-bottom: 40px;
+            }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .case-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+            .case-card:hover {
+                border-color: #ff5722;
+                transform: translateY(-3px);
+            }
+
+        .case-badge {
+            display: inline-block;
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .case-card h4 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 15px;
+        }
+
+        .case-card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0 0 10px;
+        }
+
+        .case-card strong {
+            color: #ff5722;
+        }
+
+        .image-banner {
+            position: relative;
+            margin: 60px 0 0;
+            overflow: hidden;
+            max-height: 500px;
+        }
+
+        .image-banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .image-banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 60px 30px 40px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            color: #fff;
+        }
+
+            .image-banner-overlay h2 {
+                font-size: 32px;
+                margin: 0 0 10px;
+            }
+
+            .image-banner-overlay p {
+                font-size: 16px;
+                margin: 0;
+                opacity: 0.9;
+            }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+            text-decoration: none;
+            color: #4842ce;
+        }
+
+        @media (max-width: 1000px) {
+
+            .header {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+            }
+
+            .burger-btn {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #111;
+                padding: 15px 0;
+                order: 3;
+            }
+
+                .nav-menu.active {
+                    display: flex;
+                }
+
+                .nav-menu .nav-link {
+                    padding: 12px 20px;
+                    border-bottom: 1px solid #333;
+                }
+
+            .phone {
+                font-size: 20px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+            }
+
+            .btn-request {
+                order: 4;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .remont-hero h1 {
+                font-family: 'Lora', serif;
+                font-size: 28px;
+            }
+
+            .remont-cards {
+                flex-direction: column;
+            }
+
+            .tools-grid {
+                flex-direction: column;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .modal-overlay.active {
+                display: flex;
+            }
+
+        .modal-window {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            line-height: 1;
+        }
+
+            .modal-close:hover {
+                color: #ff5722;
+            }
+
+        .modal-title {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .modal-subtitle {
+            color: #999;
+            margin: 0 0 25px 0;
+            font-size: 14px;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 15px;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border 0.3s;
+        }
+
+            .modal-input:focus {
+                outline: none;
+                border-color: #ff5722;
+            }
+
+        .modal-textarea {
+            resize: vertical;
+            min-height: 80px;
+            font-family: Arial, sans-serif;
+        }
+
+        .modal-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .modal-submit:hover {
+                background-color: #e64a19;
+                transform: scale(1.02);
+            }
+
+        .modal-success {
+            display: none;
+            text-align: center;
+            color: white;
+        }
+
+            .modal-success.active {
+                display: block;
+            }
+
+            .modal-success h2 {
+                margin-bottom: 10px;
+            }
+
+        .modal-form.hidden {
+            display: none;
+        }
+
+        .remont-hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+            .remont-hero h1 {
+                font-family: 'Lora', serif;
+                font-size: 42px;
+                color: white;
+                margin-bottom: 20px;
+            }
+
+            .remont-hero p {
+                font-size: 18px;
+                color: #aaa;
+                line-height: 1.6;
+            }
+
+            .remont-hero p1 {
+                font-size: 18px;
+                color: #ff5722;
+                line-height: 1.6;
+            }
+
+        .remont-cards {
+            display: flex;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .remont-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+            .remont-card:hover {
+                border-color: #ff5722;
+                transform: translateY(-5px);
+            }
+
+            .remont-card h3 {
+                color: white;
+                font-size: 20px;
+                margin: 0 0 15px;
+            }
+
+            .remont-card p {
+                color: #999;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+        .remont-section-dark {
+            background-color: #111;
+            padding: 60px 30px;
+            margin: 60px 0;
+        }
+
+            .remont-section-dark h2 {
+                font-family: 'Lora', serif;
+                color: white;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .remont-section-dark h3 {
+                color: white;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+        .problems-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #ff5722;
+        }
+
+            .problem-item strong {
+                color: white;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .problem-item p {
+                color: #aaa;
+                margin: 0;
+                line-height: 1.6;
+            }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tool-item {
+            flex: 1;
+            min-width: 250px;
+            color: #ccc;
+            line-height: 1.6;
+            padding: 10px 0;
+        }
+
+            .tool-item strong {
+                color: #ff5722;
+            }
+
+        .steps-block {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+            .steps-block h2 {
+                font-family: 'Lora', serif;
+                color: white;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #ff5722;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            color: white;
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .step-text p {
+            color: #999;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .faq-block {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+            .faq-block h2 {
+                font-family: 'Lora', serif;
+                color: white;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+        .faq-item {
+            border-bottom: 1px solid #222;
+            padding: 20px 0;
+        }
+
+            .faq-item strong {
+                color: white;
+                display: block;
+                margin-bottom: 8px;
+                font-size: 17px;
+            }
+
+            .faq-item p {
+                color: #999;
+                margin: 0;
+                line-height: 1.6;
+            }
+
+        .cta-block {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+            .cta-block h2 {
+                font-family: 'Lora', serif;
+                color: white;
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .cta-block p {
+                color: #aaa;
+                margin-bottom: 30px;
+                font-size: 16px;
+            }
+
+        .btn-cta {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .btn-cta:hover {
+                background-color: #e64a19;
+                transform: scale(1.05);
+            }
+
+
+
+        .site-footer {
+            background-color: #111;
+            border-top: 1px solid #222;
+            padding: 40px 30px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-col h4 {
+                color: #fff;
+                font-size: 16px;
+                margin: 0 0 15px;
+            }
+
+            .footer-col a {
+                display: block;
+                color: #999;
+                text-decoration: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+                transition: color 0.3s;
+            }
+
+                .footer-col a:hover {
+                    color: #ff5722;
+                }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-note {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        .footer-copy {
+            color: #555;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .social-links {
+            justify-content: center !important;
+        }
+
+        .footer-social {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .social-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: 0.3s;
+            border: 2px solid #333;
+        }
+
+            .social-pic:hover {
+                transform: scale(1.15);
+                border-color: #ff5722;
+            }
+
+        .parallax-section {
+            background-image: url('parallax-bg.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 70vh;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+            .parallax-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0, 0.5);
+                z-index: 0;
+            }
+
+        .parallax-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+            .parallax-content h2 {
+                font-family: 'Lora', serif;
+                font-size: 42px;
+                margin-bottom: 15px;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            }
+
+            .parallax-content p {
+                font-size: 20px;
+                opacity: 0.9;
+            }
+
+        .parallax-mobile-img {
+            display: none;
+        }
+
+        @media (max-width: 1000px) {
+            .parallax-section {
+                background-image: none !important;
+                background-attachment: scroll !important;
+                height: auto;
+                min-height: auto;
+                padding: 20px;
+                display: block;
+                position: relative;
+            }
+
+                .parallax-section::before {
+                    display: none;
+                }
+
+            .parallax-mobile-img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                position: relative;
+                z-index: 0;
+                filter: brightness(0.5);
+            }
+
+            .parallax-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                text-align: center;
+                padding: 0 20px;
+                width: 100%;
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+                .parallax-content h2 {
+                    font-size: 24px;
+                    color: #fff;
+                }
+
+                .parallax-content p {
+                    font-size: 16px;
+                    color: #ccc;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+
+        <a href="index.html" class="logo">ELECTRO-LED</a>
+
+        <button class="burger-btn" id="burgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="Led-NNovgorod.html">Адресные Led-панели</a>
+            <a class="nav-link" href="Montaj-NNovgorod.html">Электромонтажные работы</a>
+            <a class="nav-link" href="remont-NNovgorod">Ремонт и диагностика</a>
+        </div>
+
+        <div class="phone">+79800297701</div>
+
+        <button class="btn-request">Оставить заявку</button>
+
+    </div>
+
+    <div class="parallax-section">
+        <img src="parallax-bg.jpg" alt="Фон" class="parallax-mobile-img">
+
+        <div class="parallax-content">
+            <h2>Ваш свет — наша работа</h2>
+            <p>Диагностика, монтаж, ремонт — один раз и навсегда</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <button class="modal-close" id="modalClose">&times;</button>
+
+            <h2 class="modal-title">Оставить заявку</h2>
+            <p class="modal-subtitle">Заполните форму, и мы перезвоним вам в течение 15 минут</p>
+
+            <form class="modal-form" id="requestForm">
+
+                <input type="text"
+                       class="modal-input"
+                       placeholder="Ваше имя"
+                       id="nameInput"
+                       required>
+
+                <input type="tel"
+                       class="modal-input"
+                       placeholder="+7 (___) ___-__-__"
+                       id="phoneInput"
+                       required>
+
+                <textarea class="modal-input modal-textarea"
+                          placeholder="Ваш вопрос (необязательно)"
+                          id="questionInput"
+                          rows="3"></textarea>
+
+                <button type="submit" class="modal-submit">Отправить заявку</button>
+
+            </form>
+
+            <div class="modal-success" id="modalSuccess">
+                <h2>✅ Заявка отправлена!</h2>
+                <p>Мы перезвоним вам в ближайшее время.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="remont-hero">
+        <h1>Ремонт и диагностика электросетей в Нижнем Новгороде</h1>
+        <p>От выпавшего подрозетника до замыкания в щите — находим и устраняем неисправности любой сложности. Выезжаем по городу и области.</p>
+        <p1>За актуальными ценами, пожалуйста, обратитесь к нам через заявку.</p1>
+    </div>
+
+    <div class="remont-cards">
+        <div class="remont-card">
+            <h3>Замена автоматов</h3>
+            <p>Меняем автоматические выключатели, УЗО, дифавтоматы и реле напряжения. Подбираем номинал под сечение кабеля и реальную нагрузку, а не «как было». Если старый щит собран на соплях — приведём в порядок всю группу.</p>
+        </div>
+        <div class="remont-card">
+            <h3>Поиск неисправностей</h3>
+            <p>Пропадает свет? Розетка работает через раз? Приезжаем с мультиметром, токовыми клещами и тепловизором. Находим причину, а не меняем всё подряд. Скрытый обрыв, плохой контакт, повреждённая изоляция — это задача с конкретным решением.</p>
+        </div>
+        <div class="remont-card">
+            <h3>Ремонт подрозетников</h3>
+            <p>Вываливается розетка из стены? Подрозетник разбит или утоплен? Восстанавливаем посадочное место, меняем коробку, фиксируем. Розетка будет сидеть мёртво, как на новой квартире.</p>
+        </div>
+    </div>
+
+    <div class="remont-section-dark">
+        <h2>С чем чаще всего приходят</h2>
+        <div class="problems-list">
+            <div class="problem-item">
+                <strong>Искрит розетка при включении</strong>
+                <p>Причина в плохом контакте или изношенном механизме. Часто достаточно протянуть винты или заменить внутренности, не трогая проводку.</p>
+            </div>
+            <div class="problem-item">
+                <strong>Выбивает автомат при включении техники</strong>
+                <p>Стиралка, духовка, чайник. Возможно, превышена нагрузка на линию или проблема в самой технике. Проверим и скажем точно.</p>
+            </div>
+            <div class="problem-item">
+                <strong>Пахнет горелым пластиком из щитка</strong>
+                <p>Немедленно выключайте главный рубильник и звоните нам. Это признак плохого контакта, который может привести к пожару.</p>
+            </div>
+            <div class="problem-item">
+                <strong>Часть света не горит</strong>
+                <p>Пропала фаза на одной из групп. Ищем от щитка до последней распредкоробки. Чаще всего виноват отгоревший провод или сломанный выключатель.</p>
+            </div>
+            <div class="problem-item">
+                <strong>Старая алюминиевая проводка греется</strong>
+                <p>Всё ещё распространено в домах советской постройки. Перебираем контакты, где нужно — заменяем участок на медь через клеммники.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tools-grid">
+        <div class="tool-item"><strong>Мультиметр и токовые клещи</strong> — замер напряжения, тока, сопротивления</div>
+        <div class="tool-item"><strong>Тепловизор</strong> — поиск греющихся контактов без разбора стен</div>
+        <div class="tool-item"><strong>Трассоискатель</strong> — обнаружение скрытой проводки и обрывов</div>
+        <div class="tool-item"><strong>Штроборез с пылесосом</strong> — аккуратная работа без облака пыли</div>
+        <div class="tool-item"><strong>Расходники</strong> — клеммники WAGO, гильзы, термоусадка, подрозетники</div>
+    </div>
+
+    <div class="steps-block">
+        <h2>Как мы работаем</h2>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+                <h4>Заявка или звонок</h4>
+                <p>Опишите проблему. Если что-то искрит, пахнет горелым или выбивает свет — выедем быстрее.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+                <h4>Выезд и диагностика</h4>
+                <p>Мастер приезжает с полным набором инструмента. Прозваниваем цепи, ищем причину, озвучиваем стоимость. Мелкий ремонт делаем сразу и без доплаты.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+                <h4>Ремонт</h4>
+                <p>Работаем чисто. Если нужно штробить — подключаем строительный пылесос. После себя оставляем порядок.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">
+                <h4>Проверка и гарантия</h4>
+                <p>Проверяем работу под нагрузкой, показываем результат. Гарантия — 6 месяцев.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-block">
+        <h2>Частые вопросы</h2>
+        <div class="faq-item">
+            <strong>Сколько стоит выезд мастера?</strong>
+            <p>Выезд и диагностика — 150 ₽. Мелкий ремонт делаем без доплаты. Точную стоимость озвучиваем после диагностики.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Нужно ли отключать электричество перед вашим приходом?</strong>
+            <p>Нет, мы сами отключим нужную группу в щитке.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Даёте ли вы гарантию?</strong>
+            <p>Да, 6 месяцев на все виды работ. Если проблема вернулась — приезжаем и устраняем бесплатно.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Работаете ли вы с алюминиевой проводкой?</strong>
+            <p>Да, это частая ситуация в старых домах. Скрутку алюминия с медью делаем только через клеммники или гильзы.</p>
+        </div>
+    </div>
+    <div class="cases-block">
+        <h2>Реальные ситуации</h2>
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-badge">Кейс 1</div>
+                <h4>Искрила розетка — пахло гарью</h4>
+                <p><strong>Было:</strong> старая алюминиевая проводка, скрутка окислилась, контакт грелся. Хозяева боялись включать стиралку.</p>
+                <p><strong>Сделали:</strong> заменили участок на медь, установили новую розетку с заземлением, протянули все винты в щитке. За 1,5 часа проблема ушла.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-badge">Кейс 2</div>
+                <h4>Выбивал автомат при включении чайника</h4>
+                <p><strong>Было:</strong> на одну линию 16А посажены кухня и комната. Чайник + микроволновка = перегруз.</p>
+                <p><strong>Сделали:</strong> разделили линии, поставили отдельный автомат на кухню, заменили старую розетку. Теперь можно греть и варить одновременно.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-badge">Кейс 3</div>
+                <h4>Часть люстр перестала гореть</h4>
+                <p><strong>Было:</strong> пропала фаза в трёхкомнатной квартире. Свет то есть, то нет. Электрик из ЖЭКа разводил руками.</p>
+                <p><strong>Сделали:</strong> нашли обрыв в распределительной коробке под натяжным потолком. Восстановили без штробления, через клеммники WAGO.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-banner">
+        <img src="4.jpg" alt="Наша работа" class="image-banner-img">
+        <div class="image-banner-overlay">
+            <h2>Работаем с душой и по ГОСТу</h2>
+            <p>Каждый объект — наша репутация. Поэтому делаем так, как для себя.</p>
+        </div>
+    </div>
+    <div class="cta-block">
+        <h2>Не ждите, пока искра станет проблемой</h2>
+        <p>Оставьте заявку, и мастер приедет в удобное для вас время. Работаем в Нижнем Новгороде и по области.</p>
+        <button class="btn-cta" onclick="document.querySelector('.btn-request').click()">Вызвать мастера</button>
+    </div>
+    <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        if (burgerBtn) {
+            burgerBtn.addEventListener('click', function () {
+                burgerBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const btnRequest = document.querySelector('.btn-request');
+        const requestForm = document.getElementById('requestForm');
+        const modalSuccess = document.getElementById('modalSuccess');
+
+        if (btnRequest) {
+            btnRequest.addEventListener('click', function () {
+                modalOverlay.classList.add('active');
+            });
+        }
+
+        if (modalClose) {
+            modalClose.addEventListener('click', function () {
+                modalOverlay.classList.remove('active');
+            });
+        }
+
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', function (e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                }
+            });
+        }
+        if (requestForm) {
+            requestForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('nameInput').value;
+                const phone = document.getElementById('phoneInput').value;
+                const question = document.getElementById('questionInput').value || 'Не указан';
+
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        question: question
+                    })
+                })
+                    .then(() => {
+                        requestForm.classList.add('hidden');
+                        modalSuccess.classList.add('active');
+                        setTimeout(() => {
+                            modalOverlay.classList.remove('active');
+                            requestForm.classList.remove('hidden');
+                            modalSuccess.classList.remove('active');
+                            requestForm.reset();
+                        }, 3000);
+                    })
+                    .catch(() => {
+                        alert('Ошибка отправки. Пожалуйста, позвоните нам по телефону.');
+                    });
+            });
+        }</script>
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="about.html">О нас</a>
+                <a href="#feedback">Оставить отзыв</a>
+            </div>
+
+            <div class="footer-col footer-center">
+                <p class="footer-note">Электромонтажные работы в Нижнем Новгороде</p>
+                <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
+                <p class="footer-copy">© 2026 ELECTRO-LED</p>
+            </div>
+
+            <div class="footer-col footer-social">
+                <h4>Вы можете найти нас здесь:</h4>
+                <div class="social-links">
+                    <a href="https://vk.com/твой-профиль" target="_blank" title="ВКонтакте">
+                        <img src="3.jpg" alt="VK" class="social-pic">
+                    </a>
+                    <a href="https://t.me/твой-профиль" target="_blank" title="Telegram">
+                        <img src="5.jpg" alt="TG" class="social-pic">
+                    </a>
+                    <a href="https://www.avito.ru/" target="_blank" title="Авито">
+                        <img src="6.jpg" alt="Авито" class="social-pic">
+                    </a>
+                    <a href="https://profi.ru/" target="_blank" title="ПрофиРУ">
+                        <img src="7.jpg" alt="ПрофиРУ" class="social-pic">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
