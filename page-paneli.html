@@ -16,14 +16,16 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Для Android (плитка на главном экране) -->
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>Светодиодные панели</title>
-
-
-
-
-
-
     <style>
+
         body {
             background-color: #000000;
             margin: 0;
@@ -236,7 +238,414 @@
                 transform: scale(1.15);
                 border-color: #ff5722;
             }
+        /* ===== БАННЕР ===== */
+        .led-hero {
+            position: relative;
+            overflow: hidden;
+            height: 80vh;
+            min-height: 450px;
+        }
 
+        .led-hero-img {
+            width: 100%;
+            height: 105%;
+            object-fit: cover;
+            filter: brightness(0.5);
+            display: block;
+        }
+
+        .led-hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            width: 90%;
+            max-width: 800px;
+        }
+
+            .led-hero-content h1 {
+                font-family: 'Lora', serif;
+                font-size: 48px;
+                margin-bottom: 20px;
+                text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+            }
+
+            .led-hero-content p {
+                font-size: 20px;
+                opacity: 0.9;
+            }
+
+        /* ===== БЛОК ОПИСАНИЯ ===== */
+        .led-about {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .led-about-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 50px 40px;
+            background: #0a0a0a;
+            box-shadow: 0 0 25px rgba(255, 87, 34, 0.08);
+        }
+
+        .led-about-left {
+            flex: 0 0 320px;
+        }
+
+            .led-about-left h2 {
+                font-family: 'Lora', serif;
+                font-size: 30px;
+                color: white;
+                margin: 0;
+                line-height: 1.4;
+            }
+
+        .led-about-right {
+            flex: 1;
+        }
+
+            .led-about-right p {
+                color: #bbb;
+                font-size: 16px;
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+
+        /* ===== АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ===== */
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .reveal-left {
+            transform: translateX(-40px);
+        }
+
+        .reveal-right {
+            transform: translateX(40px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* ===== БЛОК 4: ПОДСВЕТКА ПЛИНТУСА ===== */
+        .led-plinth {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .led-plinth-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .led-plinth-text {
+            flex: 1;
+        }
+
+            .led-plinth-text h2 {
+                font-family: 'Lora', serif;
+                font-size: 30px;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
+            .led-plinth-text p {
+                font-size: 16px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+
+        .led-plinth-img {
+            flex: 0 0 48%;
+        }
+
+            .led-plinth-img img {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                display: block;
+                border: 1px solid #222;
+            }
+        /* ===== БЛОК 5: ПРИЗЫВ ===== */
+        .led-cta {
+            background-color: #0a0a0a;
+            padding: 80px 30px;
+            text-align: center;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .led-cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+            .led-cta-inner h2 {
+                font-family: 'Lora', serif;
+                font-size: 34px;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
+            .led-cta-inner p {
+                font-size: 18px;
+                color: #bbb;
+                line-height: 1.7;
+                margin-bottom: 30px;
+            }
+
+        .led-cta-btn {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 16px 48px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .led-cta-btn:hover {
+                background-color: #e64a19;
+                transform: scale(1.05);
+            }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .led-cta {
+                padding: 60px 20px;
+            }
+
+            .led-cta-inner h2 {
+                font-size: 26px;
+            }
+
+            .led-cta-inner p {
+                font-size: 16px;
+            }
+        }
+
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .led-plinth-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .led-plinth-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .led-plinth-text {
+                order: 2;
+            }
+
+                .led-plinth-text h2 {
+                    font-size: 24px;
+                }
+        }
+
+
+        /* ===== АДАПТИВ (телефоны) ===== */
+        @media (max-width: 768px) {
+            .led-hero {
+                height: 60vh;
+                min-height: 350px;
+            }
+
+            .led-hero-content h1 {
+                font-family: 'Lora', serif;
+                font-size: 28px;
+            }
+
+            .led-hero-content p {
+                font-size: 16px;
+            }
+
+            .led-about {
+                padding: 40px 20px;
+            }
+
+            .led-about-inner {
+                flex-direction: column;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+
+            .led-about-left {
+                flex: auto;
+            }
+
+                .led-about-left h2 {
+                    font-size: 24px;
+                }
+
+            .reveal-left,
+            .reveal-right {
+                transform: translateY(20px) !important;
+            }
+
+            .reveal.visible {
+                transform: translateY(0) !important;
+            }
+        }
+        /* ===== БЛОК 2: ПЛАВНОЕ ЗАЖИГАНИЕ ===== */
+        .led-smooth {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .led-smooth-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .led-smooth-img {
+            flex: 0 0 48%;
+        }
+
+            .led-smooth-img img {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                display: block;
+                border: 1px solid #222;
+            }
+
+        .led-smooth-text {
+
+            flex: 1;
+        }
+
+            .led-smooth-text h2 {
+                font-family: 'Lora', serif;
+                
+                font-size: 30px;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
+            .led-smooth-text p {
+                font-size: 16px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .led-smooth-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .led-smooth-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .led-smooth-text {
+                order: 2;
+            }
+
+                .led-smooth-text h2 {
+                    font-size: 24px;
+                }
+        }
+
+        /* ===== БЛОК 3: ПОДСВЕТКА ЛЕСТНИЦЫ ===== */
+        .led-stairs {
+            background-color: #000;
+            padding: 80px 30px;
+        }
+
+        .led-stairs-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .led-stairs-text {
+            flex: 1;
+        }
+
+            .led-stairs-text h2 {
+                font-family: 'Lora', serif;
+                font-size: 30px;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
+            .led-stairs-text p {
+
+                font-size: 16px;
+                color: #bbb;
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+
+        .led-stairs-img {
+            flex: 0 0 48%;
+        }
+
+            .led-stairs-img img {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                display: block;
+                border: 1px solid #222;
+            }
+        .led-cta-img {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            margin: 40px auto 0;
+            border-radius: 16px;
+            border: 1px solid #222;
+        }
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .led-stairs-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .led-stairs-img {
+                flex: auto;
+                order: 1;
+            }
+
+            .led-stairs-text {
+                order: 2;
+            }
+
+                .led-stairs-text h2 {
+                    font-size: 24px;
+                }
+        }
         /* ===== АДАПТИВ: ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ ===== */
         @media (max-width: 1000px) {
 
@@ -271,8 +680,10 @@
                 }
 
             .phone {
-                order: 2;
-                font-size: 14px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
             }
 
             .btn-request {
@@ -280,6 +691,7 @@
                 width: 100%;
                 margin-top: 10px;
             }
+
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -296,12 +708,13 @@
         }
 
         .logo {
+            color: #eeb987;
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
             flex-shrink: 0;
-            text-decoration: none; /* ← добавь эту строку */
-            color: white; /* ← и эту, чтобы цвет остался белым */
+            text-decoration: none;
+            color: #eeb987;
         }
 
         /* ===== МОДАЛЬНОЕ ОКНО ===== */
@@ -445,7 +858,6 @@
         .modal-form.hidden {
             display: none;
         }
-        
     </style>
 </head>
 <body>
@@ -468,7 +880,7 @@
             <a class="nav-link" href="page-remont.html">Ремонт и диагностика</a>
         </div>
 
-        <div class="phone">+7 (922) XXX-XX-XX</div>
+        <div class="phone">+79800297701</div>
 
         <button class="btn-request">Оставить заявку</button>
 
@@ -598,7 +1010,90 @@
                     });
             });
         }
+        // Анимация появления при скролле
+        const reveals = document.querySelectorAll('.reveal');
+        if (reveals.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            reveals.forEach(el => observer.observe(el));
+        }
     </script>
+    <!-- ===== БАННЕР ПЕРВОГО БЛОКА ===== -->
+    <!-- ===== БАННЕР ПЕРВОГО БЛОКА ===== -->
+    <div class="led-hero">
+        <img src="10.jpg" alt="LED-панель" class="led-hero-img">
+        <div class="led-hero-content">
+            <h1>Адресные светодиодные панели — новый уровень освещения</h1>
+            <p>Мягкий рассеянный свет, индивидуальное управление каждым диодом и эффект «плавного заполнения».</p>
+        </div>
+    </div>
+
+    <!-- ===== ТЕКСТОВЫЙ БЛОК БЕЗ АНИМАЦИИ ===== -->
+    <div class="led-about">
+        <div class="led-about-inner">
+            <div class="led-about-left">
+                <h2>Что такое адресные панели и почему это круто</h2>
+            </div>
+            <div class="led-about-right">
+                <p>Адресная панель — это не просто светильник. Это тонкая конструкция с десятками или сотнями отдельных светодиодов, каждым из которых можно управлять отдельно.</p>
+                <p>Мы устанавливаем адресные панели в квартиры, студии, офисы и коммерческие помещения. Для каждого проекта подбираем размер, форму и плотность свечения так, чтобы результат радовал каждый день.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== БЛОК 2: ПЛАВНОЕ ЗАЖИГАНИЕ ===== -->
+    <div class="led-smooth">
+        <div class="led-smooth-inner">
+            <div class="led-smooth-img">
+                <img src="led-smooth.jpg" alt="Плавное зажигание">
+            </div>
+            <div class="led-smooth-text">
+                <h2>Плавное зажигание — мягкий старт для вашего интерьера</h2>
+                <p>При нажатии на выключатель адресная лента не вспыхивает резко, а загорается плавно, словно рассвет. Это не только красиво, но и продлевает срок службы светодиодов.</p>
+                <p>Вы сами выбираете скорость нарастания яркости. Эффект особенно впечатляет в спальне, гостиной или зоне отдыха, где важен уют и мягкость света.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== БЛОК 3: ПОДСВЕТКА ЛЕСТНИЦЫ ===== -->
+    <div class="led-stairs">
+        <div class="led-stairs-inner">
+            <div class="led-stairs-text">
+                <h2>LED-подсветка лестницы — свет, который идёт за вами</h2>
+                <p>Установим адресную светодиодную панель в ступени лестницы и подключим датчики движения. Когда вы подходите — свет плавно загорается снизу вверх, провожая вас. При спуске — загорается сверху вниз.</p>
+                <p>Это не только эффектно, но и безопасно: не нужно искать выключатель в темноте. Идеально для частных домов, двухуровневых квартир и офисов.</p>
+            </div>
+            <div class="led-stairs-img">
+                <img src="11.jpg" alt="Подсветка лестницы">
+            </div>
+        </div>
+    </div>
+    <!-- ===== БЛОК 4: ПОДСВЕТКА ПЛИНТУСА ===== -->
+    <div class="led-plinth">
+        <div class="led-plinth-inner">
+            <div class="led-plinth-text">
+                <h2>LED-подсветка в плинтусе — свет, который не виден, но меняет всё</h2>
+                <p>Светодиодную ленту можно установить в специальный алюминиевый плинтус с рассеивателем. Свет льётся мягко и равномерно вдоль пола, создавая эффект «парящих стен» и визуально расширяя пространство.</p>
+                <p>Идеально для коридоров, гостиных, кухонь и ванных комнат. Можно настроить любой цвет и яркость, а также подключить к датчику движения — свет будет загораться автоматически, когда вы проходите мимо.</p>
+            </div>
+            <div class="led-plinth-img">
+                <img src="12.jpg" alt="LED-подсветка плинтуса">
+            </div>
+        </div>
+    </div>
+    <!-- ===== БЛОК 5: ПРИЗЫВ ===== -->
+    <div class="led-cta">
+        <div class="led-cta-inner">
+            <h2>Готовы превратить свой интерьер в произведение искусства?</h2>
+            <p>Адресные светодиодные панели — это не просто свет. Это настроение, стиль и технологичность в каждой детали. </p>
+            <p>Мы подберём решение под ваш бюджет и интерьер.</p>
+            <button class="led-cta-btn" onclick="document.querySelector('.btn-request').click()">Оставить заявку</button>
+            <img src="14.jpg" alt="LED-панели" class="led-cta-img">
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
