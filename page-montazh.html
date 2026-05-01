@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Yandex.Metrika counter -->
+    
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
@@ -14,16 +14,14 @@
         ym(108981616, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+   
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Для Android (плитка на главном экране) -->
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#000000">
 
-    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>Электромонтажные работы</title>
+    <title>Электромонтажные работы в Нижнем Новгороде</title>
     <style>
         body {
             background-color: #000000;
@@ -32,7 +30,6 @@
             color: #fff;
         }
 
-        /* ===== ШАПКА ===== */
         .header {
             background-color: #111;
             color: white;
@@ -42,6 +39,9 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
 
         .logo {
@@ -113,7 +113,6 @@
                 transform: scale(1.05);
             }
 
-        /* Бургер */
         .burger-btn {
             display: none;
             flex-direction: column;
@@ -148,7 +147,6 @@
                 transform: translateY(-9px) rotate(-45deg);
             }
 
-        /* ===== МОДАЛЬНОЕ ОКНО ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -278,19 +276,17 @@
             display: none;
         }
 
-        /* ===== БАННЕР С ПАРАЛЛАКСОМ ===== */
         .hero {
             background-image: url('1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; /* ← магия параллакса */
+            background-attachment: fixed;
             position: relative;
             padding: 270px 20px 100px;
             text-align: center;
         }
 
-            /* Затемнение поверх картинки */
             .hero::before {
                 content: '';
                 position: absolute;
@@ -306,8 +302,8 @@
             color: #ff5722;
             font-weight: bold;
         }
-        /* Контент поверх затемнения */
-        .hero h1,
+
+        .hero h1 ,
         .hero p,
         .hero .btn-hero {
             position: relative;
@@ -334,8 +330,9 @@
                 background-color: #e64a19;
                 transform: scale(1.05);
             }
-
-        /* ===== КАК МЫ РАБОТАЕМ ===== */
+        .hero h1 {
+            font-family: 'Lora', serif;
+        }
         .steps-block {
             max-width: 900px;
             margin: 60px auto;
@@ -343,6 +340,7 @@
         }
 
             .steps-block h2 {
+                font-family: 'Lora', serif;
                 text-align: center;
                 font-size: 32px;
                 margin-bottom: 40px;
@@ -381,7 +379,6 @@
             line-height: 1.6;
         }
 
-        /* ===== ПРАЙС-ЛИСТ ===== */
         .price-section {
             max-width: 1100px;
             margin: 60px auto;
@@ -389,6 +386,7 @@
         }
 
             .price-section h2 {
+                font-family: 'Lora', serif;
                 text-align: center;
                 font-size: 32px;
                 margin-bottom: 20px;
@@ -445,7 +443,6 @@
                 color: #ff5722;
             }
 
-        /* ===== ПОЛНАЯ ЗАМЕНА ПРОВОДКИ ===== */
         .full-replace {
             max-width: 1100px;
             margin: 60px auto;
@@ -453,6 +450,7 @@
         }
 
             .full-replace h2 {
+                font-family: 'Lora', serif;
                 text-align: center;
                 font-size: 32px;
                 margin-bottom: 40px;
@@ -502,13 +500,11 @@
                 margin-top: 10px;
             }
 
-        /* ===== ЧТО ВХОДИТ В СТОИМОСТЬ (СТАТИЧНЫЙ ФОН) ===== */
         .info-block {
             background-image: url('2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* убрали background-attachment: fixed */
             position: relative;
             max-width: 100%;
             margin: 60px 0;
@@ -517,7 +513,6 @@
             line-height: 1.8;
         }
 
-            /* Затемнение */
             .info-block::before {
                 content: '';
                 position: absolute;
@@ -529,7 +524,6 @@
                 z-index: 0;
             }
 
-            /* Контент поверх затемнения */
             .info-block h2,
             .info-block p {
                 position: relative;
@@ -540,6 +534,7 @@
             }
 
             .info-block h2 {
+                font-family: 'Lora', serif;
                 text-align: center;
                 font-size: 28px;
                 margin-bottom: 30px;
@@ -549,7 +544,6 @@
                 color: #ff5722;
             }
 
-        /* ===== ПРИЗЫВ ===== */
         .cta-block {
             text-align: center;
             padding: 60px 20px;
@@ -558,6 +552,7 @@
         }
 
             .cta-block h2 {
+                font-family: 'Lora', serif;
                 color: #fff;
                 font-size: 28px;
                 margin-bottom: 15px;
@@ -585,7 +580,6 @@
                 background-color: #e64a19;
                 transform: scale(1.05);
             }
-        /* ===== ПОДВАЛ ===== */
         .site-footer {
             background-color: #111;
             border-top: 1px solid #222;
@@ -626,7 +620,6 @@
                     color: #ff5722;
                 }
 
-        /* Центр */
         .footer-center {
             text-align: center;
         }
@@ -644,11 +637,9 @@
             margin: 0;
         }
 
-        /* Соцсети */
         .footer-social {
             text-align: right;
         }
-        /* Соцсети */
         .social-links {
             display: flex;
             gap: 12px;
@@ -673,7 +664,6 @@
         .parallax-mobile-img {
             display: none;
         }
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 1000px) {
             .header {
                 flex-direction: row;
@@ -681,6 +671,9 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 15px 20px;
+                position: sticky;
+                top: 0;
+                z-index: 999;
             }
 
             .burger-btn {
@@ -750,9 +743,6 @@
                 flex-direction: column;
             }
 
-
-            /* Отключаем параллакс */
-            /* Отключаем параллакс */
             .hero {
                 background-attachment: scroll !important;
                 background-image: none !important;
@@ -767,7 +757,6 @@
                     display: none;
                 }
 
-            /* Картинка */
             .parallax-mobile-img {
                 display: block;
                 width: 100%;
@@ -776,7 +765,6 @@
                 filter: brightness(0.4);
             }
 
-            /* Текст поверх картинки, по центру */
             .hero h1,
             .hero p,
             .hero .btn-hero {
@@ -816,8 +804,6 @@
     </style>
 </head>
 <body>
-
-    <!-- ===== ШАПКА ===== -->
     <div class="header">
         <a href="index.html" class="logo">ELECTRO-LED</a>
 
@@ -829,7 +815,7 @@
 
         <div class="nav-menu" id="navMenu">
             <a class="nav-link" href="index.html">Главная</a>
-            <a class="nav-link" href="page-paneli.html">Светодиодные панели</a>
+            <a class="nav-link" href="page-paneli.html">Адресные Led-панели</a>
             <a class="nav-link" href="page-montazh.html">Электромонтажные работы</a>
             <a class="nav-link" href="page-remont.html">Ремонт и диагностика</a>
         </div>
@@ -839,10 +825,9 @@
         <button class="btn-request">Оставить заявку</button>
     </div>
 
-    <!-- ===== БАННЕР ===== -->
     <div class="hero">
         <img src="1.jpg" alt="Фон" class="parallax-mobile-img">
-        <h1>Электромонтажные работы</h1>
+        <h1>Электромонтажные работы в Нижнем Новгороде</h1>
         <p>От замены розетки до полной разводки электрики в квартире, доме или офисе. Работаем с проектами любой сложности.</p>
         <p>Работаем по договору. Цены ориентировочные, точную стоимость озвучим после осмотра объекта.</p>
         <p><span class="highlight">Полная стоимость всех услуг доступна по заявке</span>.</p>
@@ -850,7 +835,6 @@
         <button class="btn-hero" onclick="document.querySelector('.btn-request').click()">Рассчитать стоимость</button>
     </div>
 
-    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
     <div class="steps-block">
         <h2>Как мы работаем</h2>
         <div class="step">
@@ -883,12 +867,10 @@
         </div>
     </div>
 
-    <!-- ===== ПРАЙС-ЛИСТ ===== -->
     <div class="price-section">
         <h2>Прайс-лист на электромонтажные работы</h2>
         <p class="subtitle">Ориентировочные цены. Окончательная стоимость зависит от сложности и объёма работ.</p>
 
-        <!-- Выезд мастера -->
         <div class="price-category">
             <h3>Вызов электрика</h3>
             <div class="price-cards">
@@ -908,7 +890,6 @@
             </div>
         </div>
 
-        <!-- Розетки и выключатели -->
         <div class="price-category">
             <h3>Розетки и выключатели</h3>
             <div class="price-cards">
@@ -950,8 +931,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Освещение -->
         <div class="price-category">
             <h3>Освещение</h3>
             <div class="price-cards">
@@ -986,7 +965,6 @@
             </div>
         </div>
 
-        <!-- Прокладка кабеля -->
         <div class="price-category">
             <h3>Прокладка кабеля</h3>
             <div class="price-cards">
@@ -1017,7 +995,6 @@
             </div>
         </div>
 
-        <!-- Щиты и автоматы -->
         <div class="price-category">
             <h3>Щиты и автоматы</h3>
             <div class="price-cards">
@@ -1048,7 +1025,6 @@
             </div>
         </div>
 
-        <!-- Диагностика -->
         <div class="price-category">
             <h3>Диагностика</h3>
             <div class="price-cards">
@@ -1072,7 +1048,6 @@
         </div>
     </div>
 
-    <!-- ===== ПОЛНАЯ ЗАМЕНА ПРОВОДКИ ===== -->
     <div class="full-replace">
         <h2>Полная замена проводки</h2>
         <div class="replace-cards">
@@ -1103,7 +1078,6 @@
         </div>
     </div>
 
-    <!-- ===== ЧТО ВХОДИТ В СТОИМОСТЬ ===== -->
     <div class="info-block">
         <h2>Что влияет на стоимость</h2>
         <p><strong>Материал стен</strong> — гипс, кирпич, бетон. Штробление бетона дороже, чем гипса.</p>
@@ -1113,14 +1087,12 @@
         <p>Точную стоимость озвучиваем <strong>после диагностики</strong>. При заказе работ выезд мастера — бесплатно.</p>
     </div>
 
-    <!-- ===== ПРИЗЫВ ===== -->
     <div class="cta-block">
         <h2>Не нашли нужную услугу?</h2>
         <p>Оставьте заявку — подберем мастера и рассчитаем стоимость в течение часа</p>
         <button class="btn-cta" onclick="document.querySelector('.btn-request').click()">Оставить заявку</button>
     </div>
 
-    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -1139,9 +1111,7 @@
         </div>
     </div>
 
-    <!-- ===== СКРИПТЫ ===== -->
     <script>
-        // Бургер-меню
         const burgerBtn = document.getElementById('burgerBtn');
         const navMenu = document.getElementById('navMenu');
         if (burgerBtn) {
@@ -1151,28 +1121,24 @@
             });
         }
 
-        // ===== МОДАЛЬНОЕ ОКНО =====
         const modalOverlay = document.getElementById('modalOverlay');
         const modalClose = document.getElementById('modalClose');
         const btnRequest = document.querySelector('.btn-request');
         const requestForm = document.getElementById('requestForm');
         const modalSuccess = document.getElementById('modalSuccess');
 
-        // Открыть окно по кнопке "Оставить заявку"
         if (btnRequest) {
             btnRequest.addEventListener('click', function () {
                 modalOverlay.classList.add('active');
             });
         }
 
-        // Закрыть окно по крестику
         if (modalClose) {
             modalClose.addEventListener('click', function () {
                 modalOverlay.classList.remove('active');
             });
         }
 
-        // Закрыть окно при клике на фон
         if (modalOverlay) {
             modalOverlay.addEventListener('click', function (e) {
                 if (e.target === modalOverlay) {
@@ -1181,7 +1147,6 @@
             });
         }
 
-        // Отправка формы
         if (requestForm) {
             requestForm.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -1218,25 +1183,21 @@
             });
         }
     </script>
-    <!-- ===== ПОДВАЛ ===== -->
     <footer class="site-footer">
         <div class="footer-inner">
 
-            <!-- Левая колонка: ссылки -->
             <div class="footer-col">
                 <h4>Информация</h4>
                 <a href="about.html">О нас</a>
                 <a href="#feedback">Оставить отзыв</a>
             </div>
 
-            <!-- Центр: памятка и копирайт -->
             <div class="footer-col footer-center">
                 <p class="footer-note">Электромонтажные работы в Нижнем Новгороде</p>
                 <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
                 <p class="footer-copy">© 2026 ELECTRO-LED</p>
             </div>
 
-            <!-- Правая колонка: соцсети -->
             <div class="footer-col footer-social">
                 <h4>Вы можете найти нас здесь:</h4>
                 <div class="social-links">
