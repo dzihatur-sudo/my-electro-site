@@ -15,6 +15,13 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Для Android (плитка на главном экране) -->
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>ремонт электросетей</title>
     <style>
         body {
@@ -242,6 +249,7 @@
                 margin: 0;
                 opacity: 0.9;
             }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -286,8 +294,10 @@
                 }
 
             .phone {
-                order: 2;
-                font-size: 14px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
             }
 
             .btn-request {
@@ -331,7 +341,7 @@
             }
         }
 
-      
+
 
 
 
@@ -783,9 +793,12 @@
             margin: 0;
         }
 
+        .social-links {
+            justify-content: center !important;
+        }
         /* Соцсети */
         .footer-social {
-            text-align: right;
+            text-align: center;
         }
         /* Соцсети */
         .social-links {
@@ -938,7 +951,7 @@
             <a class="nav-link" href="page-remont.html">Ремонт и диагностика</a>
         </div>
 
-        <div class="phone">+7 (922) XXX-XX-XX</div>
+        <div class="phone">+79800297701</div>
 
         <button class="btn-request">Оставить заявку</button>
 
