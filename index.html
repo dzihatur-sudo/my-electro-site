@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
@@ -17,28 +16,23 @@
         
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Для Android (плитка на главном экране) -->
+  
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#000000">
-
-    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>Главная страница</title>
+    <title>Электромонтаж и LED панели в Нижнем Новгороде</title>
     <style>
         body {
+           
             background-color: #000000;
             margin: 0;
             font-family: Arial, sans-serif;
+            
         }
-
-
-        /* ========================================= */
-        /*   СЕКЦИЯ 1: ЧЕРНАЯ ПОЛОСКА (ШАПКА)      */
-        /* ========================================= */
         .header {
+           
             background-color: #111;
             color: white;
             padding: 15px 40px;
@@ -47,60 +41,60 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
 
-        /* Название компании */
-
-
-        /* ===== БЛОК С КНОПКАМИ УСЛУГ ===== */
+   
         .nav-menu {
             display: flex;
-            gap: 25px; /* Расстояние между кнопками */
+            gap: 25px; 
             flex-wrap: wrap;
         }
 
-        /* Одна кнопка меню */
+       
         .nav-link {
-            color: #ccc; /* Серый текст */
-            text-decoration: none; /* Убираем подчеркивание */
+            color: #ccc; 
+            text-decoration: none; 
             font-size: 15px;
-            padding-bottom: 5px; /* Место для подчеркивания */
-            position: relative; /* Чтобы анимация была внутри */
-            transition: color 0.3s; /* Плавная смена цвета */
+            padding-bottom: 5px; 
+            position: relative; 
+            transition: color 0.3s; 
             cursor: pointer;
-            white-space: nowrap; /* Текст не переносится */
+            white-space: nowrap; 
         }
 
-            /* При наведении текст становится белым */
+            
             .nav-link:hover {
-                color: #ff5722; /* Оранжевый, как кнопка */
+                color: #ff5722; 
             }
 
-            /* ===== МАГИЯ: ПОДЧЕРКИВАНИЕ ===== */
+            
             .nav-link::after {
-                content: ''; /* Обязательно для псевдоэлемента */
+                content: ''; 
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                width: 0%; /* Изначально невидимо */
-                height: 2px; /* Толщина линии */
-                background-color: #ff5722; /* Цвет линии */
-                transition: width 0.4s ease; /* Плавное расширение */
+                width: 0%; 
+                height: 2px; 
+                background-color: #ff5722; 
+                transition: width 0.4s ease; 
             }
 
-            /* При наведении линия расширяется до 100% */
+           
             .nav-link:hover::after {
                 width: 100%;
             }
 
-        /* Номер телефона */
+        
         .phone {
             font-size: 16px;
             color: #ccc;
             flex-shrink: 0;
         }
 
-        /* Кнопка "Оставить заявку" */
+        
         .btn-request {
             background-color: #ff5722;
             color: white;
@@ -116,12 +110,9 @@
 
             .btn-request:hover {
                 background-color: #e64a19;
-                transform: scale(1.05); /* Легкое увеличение при наведении */
+                transform: scale(1.05); 
             }
-        /* ===== СЕКЦИЯ 2: ТЕКСТ + ВИДЕО ===== */
-
-
-        /* ===== АДАПТИВ: ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
+        
 
 
 
@@ -134,9 +125,9 @@
             gap: 50px;
         }
 
-        /* Левый блок */
+        
         .text-block {
-            flex: 1; /* Занимает половину */
+            flex: 1; 
         }
 
             .text-block h2 {
@@ -152,35 +143,35 @@
                 margin-bottom: 15px;
             }
 
-        /* Правый блок (контейнер для видео) */
+       
         .video-block {
             flex: 1;
-            position: relative; /* Чтобы видео лежали друг на друге */
-            height: 700px; /* Фиксированная высота */
+            position: relative; 
+            height: 700px; 
             border-radius: 14px;
-            overflow: hidden; /* Обрезаем углы */
+            overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Все видео */
+        
         .slide-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Заполняет блок, обрезая лишнее */
-            opacity: 0; /* Изначально невидимы */
-            transition: opacity 1.5s ease; /* Плавное появление/исчезновение */
+            object-fit: cover; 
+            opacity: 0; 
+            transition: opacity 1.5s ease; 
         }
 
-            /* Активное видео видно */
+            
             .slide-video.active {
                 opacity: 1;
             }
-        /* ===== БУРГЕР-КНОПКА ===== */
+        
         .burger-btn {
-            display: none; /* На десктопе скрыта */
+            display: none;
             flex-direction: column;
             justify-content: space-between;
             width: 30px;
@@ -189,10 +180,10 @@
             border: none;
             cursor: pointer;
             padding: 0;
-            z-index: 1000; /* Чтобы была выше меню */
+            z-index: 1000; 
         }
 
-            /* Три полоски */
+            
             .burger-btn span {
                 display: block;
                 width: 100%;
@@ -202,7 +193,7 @@
                 transition: 0.3s;
             }
 
-            /* Анимация бургера в крестик (будет добавляться классом) */
+            
             .burger-btn.active span:nth-child(1) {
                 transform: translateY(9px) rotate(45deg);
             }
@@ -254,7 +245,7 @@
                 .footer-col a:hover {
                     color: #ff5722;
                 }
-        /* Центр */
+        
         .footer-center {
             text-align: center;
         }
@@ -271,11 +262,11 @@
             font-size: 13px;
             margin: 0;
         }
-        /* Соцсети */
+        
         .footer-social {
             text-align: right;
         }
-        /* Соцсети */
+       
         .social-links {
             display: flex;
             gap: 12px;
@@ -296,7 +287,7 @@
                 transform: scale(1.15);
                 border-color: #ff5722;
             }
-        /* ===== БАННЕР ===== */
+       
         .main-hero {
             position: relative;
             overflow: hidden;
@@ -371,7 +362,7 @@
                 background-color: #ff5722;
             }
 
-        /* ===== ПРЕИМУЩЕСТВА ===== */
+        
         .main-advantages {
             background-color: #111;
             padding: 60px 30px;
@@ -416,7 +407,7 @@
             line-height: 1.6;
         }
 
-        /* ===== КАК МЫ РАБОТАЕМ ===== */
+        
         .main-steps {
             background-color: #000;
             padding: 70px 30px;
@@ -477,7 +468,7 @@
             line-height: 1.5;
         }
 
-        /* ===== FAQ ===== */
+       
         .main-faq {
             background-color: #000;
             padding: 70px 30px;
@@ -519,7 +510,7 @@
             line-height: 1.7;
         }
 
-        /* ===== ПРИЗЫВ ===== */
+        
         .main-cta {
             background-color: #0a0a0a;
             padding: 80px 30px;
@@ -539,7 +530,7 @@
                 color: #bbb;
                 margin-bottom: 30px;
             }
-        /* ===== ПРОМО LED-ПАНЕЛЕЙ ===== */
+        
         .main-led-promo {
             background-color: #000;
             padding: 80px 30px;
@@ -582,7 +573,7 @@
                 line-height: 1.8;
                 margin-bottom: 25px;
             }
-        /* ===== ПРЕИМУЩЕСТВА LED-ПАНЕЛЕЙ ===== */
+       
         .main-led-benefits {
             background-color: #000;
             padding: 70px 30px;
@@ -641,7 +632,7 @@
             line-height: 1.6;
         }
 
-        /* ===== ГДЕ МОЖНО УСТАНОВИТЬ ===== */
+        
         .main-led-places {
             background-color: #0a0a0a;
             padding: 70px 30px;
@@ -679,7 +670,7 @@
                 color: #fff;
             }
 
-        /* ===== FAQ LED ===== */
+       
         .main-led-faq {
             background-color: #000;
             padding: 70px 30px;
@@ -693,7 +684,7 @@
                 margin-bottom: 50px;
             }
 
-        /* ===== ЗАВЕРШАЮЩИЙ БЛОК С КАРТИНКОЙ ===== */
+      
         .main-led-final {
             background-color: #0a0a0a;
             padding: 80px 30px;
@@ -734,8 +725,7 @@
                 border-radius: 20px;
                 border: 1px solid #222;
             }
-        /* ===== ПРОМО ЭЛЕКТРОМОНТАЖ ===== */
-        /* ===== БАННЕР ЭЛЕКТРОМОНТАЖ ===== */
+       
         .montazh-hero {
             position: relative;
             overflow: hidden;
@@ -769,7 +759,7 @@
                 text-shadow: 0 2px 15px rgba(0,0,0,0.7);
             }
 
-        /* ===== ТЕКСТОВЫЙ БЛОК ===== */
+        
         .montazh-about {
             background-color: #000;
             padding: 60px 30px;
@@ -792,8 +782,7 @@
                 margin-top: 10px;
             }
 
-        /* ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== */
-        /* ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== */
+        
         .main-remont {
             background-color: #000;
             padding: 80px 30px;
@@ -874,7 +863,7 @@
             display: inline-block;
         }
 
-        /* Адаптив */
+       
         @media (max-width: 768px) {
             .main-remont-inner h2 {
                 font-size: 26px;
@@ -885,7 +874,7 @@
             }
         }
 
-        /* Адаптив */
+        
         @media (max-width: 768px) {
             .main-remont-inner {
                 flex-direction: column;
@@ -909,7 +898,7 @@
                     font-size: 20px;
                 }
         }
-        /* Адаптив */
+       
         @media (max-width: 768px) {
             .montazh-hero {
                 height: 50vh;
@@ -925,7 +914,7 @@
             }
         }
 
-        /* ===== ЧТО МЫ ДЕЛАЕМ ===== */
+       
         .main-services {
             background-color: #0a0a0a;
             padding: 70px 30px;
@@ -977,7 +966,7 @@
             line-height: 1.6;
         }
 
-        /* ===== ПОЧЕМУ НАМ ДОВЕРЯЮТ ===== */
+       
         .main-trust {
             background-color: #000;
             padding: 70px 30px;
@@ -1029,7 +1018,7 @@
             line-height: 1.6;
         }
 
-        /* Адаптив */
+       
         @media (max-width: 768px) {
             .main-montazh-promo-inner {
                 flex-direction: column;
@@ -1061,12 +1050,6 @@
             }
         } 
 
-
-
-
-
-
-        /* Адаптив */
         @media (max-width: 768px) {
             .main-led-benefits-grid,
             .main-led-places-grid {
@@ -1095,12 +1078,6 @@
             }
         }
 
-
-
-
-
-
-        /* Адаптив */
         @media (max-width: 768px) {
             .main-led-promo-inner {
                 flex-direction: column;
@@ -1122,7 +1099,6 @@
                 }
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .main-hero {
                 height: 70vh;
@@ -1150,44 +1126,47 @@
                 font-size: 16px;
             }
         }
-        /* ===== АДАПТИВ: ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
+        
         @media (max-width: 1000px) {
 
             .header {
-                flex-direction: row; /* Лого и бургер в одной строке */
+                flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 align-items: center;
                 padding: 15px 20px;
+                position: sticky;
+                top: 0;
+                z-index: 999;
             }
 
-            /* Показываем бургер */
+            
             .burger-btn {
                 display: flex;
             }
 
-            /* Прячем обычное горизонтальное меню */
+            
             .nav-menu {
-                display: none; /* Исчезает */
-                flex-direction: column; /* Будет в столбик при показе */
+                display: none; 
+                flex-direction: column; 
                 width: 100%;
-                background-color: #111; /* Фон как у шапки */
+                background-color: #111;
                 padding: 15px 0;
-                order: 3; /* Ставим после лого и бургера */
+                order: 3; 
             }
 
-                /* Когда меню открыто — показываем */
+                
                 .nav-menu.active {
                     display: flex;
                 }
 
-                /* Ссылки в мобильном меню */
+                
                 .nav-menu .nav-link {
                     padding: 12px 20px;
                     border-bottom: 1px solid #333;
                 }
 
-            /* Телефон и кнопку можно оставить или спрятать — по желанию */
+           
             .phone {
                 font-size: 20px;
                 font-weight: bold;
@@ -1221,34 +1200,30 @@
             font-weight: bold;
             letter-spacing: 2px;
             flex-shrink: 0;
-            text-decoration: none; /* ← добавь эту строку */
-            color: white; /* ← и эту, чтобы цвет остался белым */
+            text-decoration: none; 
+            color: white; 
         }
 
 
-
-        /* ===== МОДАЛЬНОЕ ОКНО ===== */
-
-        /* Затемняющий фон */
         .modal-overlay {
-            display: none; /* Скрыто по умолчанию */
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный чёрный */
+            background-color: rgba(0, 0, 0, 0.8); 
             z-index: 9999;
             justify-content: center;
             align-items: center;
         }
 
-            /* Когда окно открыто */
+            
             .modal-overlay.active {
                 display: flex;
             }
 
-        /* Белое окно */
+       
         .modal-window {
             background-color: #1a1a1a;
             border: 1px solid #333;
@@ -1260,7 +1235,7 @@
             animation: modalIn 0.3s ease;
         }
 
-        /* Анимация появления */
+        
         @keyframes modalIn {
             from {
                 opacity: 0;
@@ -1273,7 +1248,7 @@
             }
         }
 
-        /* Кнопка закрыть (крестик) */
+        
         .modal-close {
             position: absolute;
             top: 15px;
@@ -1291,21 +1266,21 @@
                 color: #ff5722;
             }
 
-        /* Заголовок */
+        
         .modal-title {
             color: white;
             margin: 0 0 10px 0;
             font-size: 24px;
         }
 
-        /* Подзаголовок */
+        
         .modal-subtitle {
             color: #999;
             margin: 0 0 25px 0;
             font-size: 14px;
         }
 
-        /* Поля ввода */
+       
         .modal-input {
             width: 100%;
             padding: 14px 16px;
@@ -1324,14 +1299,14 @@
                 border-color: #ff5722;
             }
 
-        /* Текстовое поле */
+        
         .modal-textarea {
             resize: vertical;
             min-height: 80px;
             font-family: Arial, sans-serif;
         }
 
-        /* Кнопка отправки */
+        
         .modal-submit {
             width: 100%;
             padding: 14px;
@@ -1350,7 +1325,7 @@
                 transform: scale(1.02);
             }
 
-        /* Сообщение об успехе (изначально скрыто) */
+        
         .modal-success {
             display: none;
             text-align: center;
@@ -1372,48 +1347,46 @@
 </head>
 <body>
 
-    <!-- ===== ШАПКА ===== -->
+    
     <div class="header">
 
-        <!-- Название компании -->
+        
         <a href="index.html" class="logo">ELECTRO-LED</a>
 
-        <!-- ТРИ КНОПКИ УСЛУГ (МЕНЮ) -->
-        <!-- Кнопка-бургер (видна только на мобилках) -->
+       
         <button class="burger-btn" id="burgerBtn">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- Меню (на десктопе — в строку, на мобилке — выпадает) -->
+       
         <div class="nav-menu" id="navMenu">
 
-            <a class="nav-link" href="page-paneli.html">Светодиодные панели</a>
+            <a class="nav-link" href="page-paneli.html">Адресные Led-панели</a>
             <a class="nav-link" href="page-montazh.html">Электромонтажные работы</a>
             <a class="nav-link" href="page-remont.html">Ремонт и диагностика</a>
         </div>
 
-        <!-- Телефон -->
+        
         <div class="phone">+79800297701</div>
 
-        <!-- Кнопка заявки -->
+       
         <button class="btn-request">Оставить заявку</button>
 
     </div>
-    <!-- ===== СЕКЦИЯ 2: ТЕКСТ СЛЕВА + ВИДЕО СПРАВА ===== -->
-    <!-- ===== МОДАЛЬНОЕ ОКНО (ЗАЯВКА) ===== -->
+    
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
 
-            <!-- Кнопка закрыть (крестик) -->
+           
             <button class="modal-close" id="modalClose">&times;</button>
 
-            <!-- Заголовок -->
+            
             <h2 class="modal-title">Оставить заявку</h2>
             <p class="modal-subtitle">Заполните форму, и мы перезвоним вам в течение 15 минут</p>
 
-            <!-- Форма -->
+            
             <form class="modal-form" id="requestForm">
 
                 <input type="text"
@@ -1437,7 +1410,7 @@
 
             </form>
 
-            <!-- Сообщение об успехе (изначально скрыто) -->
+           
             <div class="modal-success" id="modalSuccess">
                 <h2>✅ Заявка отправлена!</h2>
                 <p>Мы перезвоним вам в ближайшее время.</p>
@@ -1445,55 +1418,55 @@
 
         </div>
     </div>
-    <!-- Тут будет следующая секция -->
+   
     <script>
 
 
-        // Бургер-меню
+        
         const burgerBtn = document.getElementById('burgerBtn');
         const navMenu = document.getElementById('navMenu');
 
         burgerBtn.addEventListener('click', function () {
-            // Переключаем класс active у кнопки и у меню
+            
             burgerBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
 
 
-        // ===== МОДАЛЬНОЕ ОКНО =====
+       
         const modalOverlay = document.getElementById('modalOverlay');
         const modalClose = document.getElementById('modalClose');
         const btnRequest = document.querySelector('.btn-request');
         const requestForm = document.getElementById('requestForm');
         const modalSuccess = document.getElementById('modalSuccess');
 
-        // Открыть окно по кнопке "Оставить заявку"
+        
         btnRequest.addEventListener('click', function () {
             modalOverlay.classList.add('active');
         });
 
-        // Закрыть окно по крестику
+        
         modalClose.addEventListener('click', function () {
             modalOverlay.classList.remove('active');
         });
 
-        // Закрыть окно при клике на фон (затемнение)
+        
         modalOverlay.addEventListener('click', function (e) {
             if (e.target === modalOverlay) {
                 modalOverlay.classList.remove('active');
             }
         });
 
-        // Отправка формы
+        
         requestForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Не перезагружаем страницу
+            e.preventDefault(); 
 
             const name = document.getElementById('nameInput').value;
             const phone = document.getElementById('phoneInput').value;
             const question = document.getElementById('questionInput').value || 'Не указан';
 
-            // Вставь свой URL из Google Apps Script (тот, что скопировал выше)
+            
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwkJpHARe92lpvDJPG9bq8n9RwT6Zq6rm8vSOgomHnzL50oRoIOH0RsfcvSLpbJZW9h/exec';
 
             fetch(scriptURL, {
@@ -1507,11 +1480,11 @@
                 })
             })
                 .then(() => {
-                    // Прячем форму, показываем успех
+                    
                     requestForm.classList.add('hidden');
                     modalSuccess.classList.add('active');
 
-                    // Через 3 секунды закрываем окно и сбрасываем
+                    
                     setTimeout(() => {
                         modalOverlay.classList.remove('active');
                         requestForm.classList.remove('hidden');
@@ -1528,13 +1501,13 @@
 
 
 
-        // ===== ОКНО ОТЗЫВА =====
+       
         const reviewOverlay = document.getElementById('reviewOverlay');
         const reviewClose = document.getElementById('reviewClose');
         const reviewForm = document.getElementById('reviewForm');
         const reviewSuccess = document.getElementById('reviewSuccess');
 
-        // Открыть по ссылке в подвале
+       
         document.addEventListener('click', function (e) {
             if (e.target && e.target.getAttribute('href') === '#feedback') {
                 e.preventDefault();
@@ -1542,7 +1515,7 @@
             }
         });
 
-        // Закрыть
+       
         if (reviewClose) {
             reviewClose.addEventListener('click', function () {
                 reviewOverlay.classList.remove('active');
@@ -1554,7 +1527,7 @@
             });
         }
 
-        // Отправка
+        
         if (reviewForm) {
             reviewForm.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -1593,7 +1566,7 @@
 
 
     </script>
-    <!-- ===== БАННЕР ===== -->
+   
     <div class="main-hero">
         <img src="20.jpg" alt="Electro-Led" class="main-hero-img">
         <div class="main-hero-content">
@@ -1606,7 +1579,7 @@
         </div>
     </div>
 
-    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    
     <div class="main-advantages">
         <div class="main-advantages-inner">
             <div class="adv-item">
@@ -1632,7 +1605,7 @@
         </div>
     </div>
 
-    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+    
     <div class="main-steps">
         <h2>Как мы работаем</h2>
         <div class="main-steps-grid">
@@ -1662,7 +1635,7 @@
 
 
     
-    <!-- ===== МОДАЛЬНОЕ ОКНО (ОТЗЫВ) ===== -->
+    
     <div class="modal-overlay" id="reviewOverlay">
         <div class="modal-window">
             <button class="modal-close" id="reviewClose">&times;</button>
@@ -1685,7 +1658,7 @@
 
 
 
-    <!-- ===== FAQ ===== -->
+   
     <div class="main-faq">
         <h2>Частые вопросы</h2>
         <div class="main-faq-list">
@@ -1708,13 +1681,13 @@
         </div>
     </div>
 
-    <!-- ===== ПРИЗЫВ ===== -->
+   
     <div class="main-cta">
         <h2>Есть вопросы или нужна консультация?</h2>
         <p>Оставьте заявку — перезвоним в ближайшее время и всё расскажем.</p>
         <button class="bt-main" onclick="document.querySelector('.btn-request').click()">Оставить заявку</button>
     </div>
-    <!-- ===== ПРОМО LED-ПАНЕЛЕЙ ===== -->
+    
     <div class="main-led-promo">
         <div class="main-led-promo-inner">
             <div class="main-led-promo-img">
@@ -1727,7 +1700,7 @@
             </div>
         </div>
     </div>
-    <!-- ===== ПРЕИМУЩЕСТВА LED-ПАНЕЛЕЙ ===== -->
+   
     <div class="main-led-benefits">
         <h2>Почему стоит выбрать адресные светодиодные панели</h2>
         <p class="main-led-subtitle">Технология, которая меняет восприятие света в интерьере</p>
@@ -1765,7 +1738,7 @@
         </div>
     </div>
 
-    <!-- ===== ГДЕ МОЖНО УСТАНОВИТЬ ===== -->
+    
     <div class="main-led-places">
         <h2>Где можно установить LED-панели</h2>
         <div class="main-led-places-grid">
@@ -1780,7 +1753,7 @@
         </div>
     </div>
 
-    <!-- ===== FAQ LED ===== -->
+    
     <div class="main-led-faq">
         <h2>Частые вопросы про LED-панели</h2>
         <div class="main-faq-list">
@@ -1799,7 +1772,7 @@
         </div>
     </div>
 
-    <!-- ===== ЗАВЕРШАЮЩИЙ БЛОК С КАРТИНКОЙ ===== -->
+    
     <div class="main-led-final">
         <div class="main-led-final-inner">
             <div class="main-led-final-text">
@@ -1812,8 +1785,7 @@
             </div>
         </div>
     </div>
-    <!-- ===== ПРОМО ЭЛЕКТРОМОНТАЖ ===== -->
-    <!-- ===== БАННЕР ЭЛЕКТРОМОНТАЖ ===== -->
+   
     <div class="montazh-hero">
         <img src="22.jpg" alt="Электромонтажные работы" class="montazh-hero-img">
         <div class="montazh-hero-content">
@@ -1821,7 +1793,7 @@
         </div>
     </div>
 
-    <!-- ===== ТЕКСТОВЫЙ БЛОК ===== -->
+   
     <div class="montazh-about">
         <div class="montazh-about-inner">
             <p>От замены одной розетки до полной разводки электрики в доме, квартире или офисе. Работаем с проектами любой сложности — от типовых до дизайнерских.</p>
@@ -1830,7 +1802,7 @@
         </div>
     </div>
 
-    <!-- ===== ЧТО МЫ ДЕЛАЕМ ===== -->
+   
     <div class="main-services">
         <h2>Что мы делаем</h2>
         <div class="main-services-grid">
@@ -1866,8 +1838,7 @@
             </div>
         </div>
     </div>
-    <!-- ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== -->
-    <!-- ===== БЛОК РЕМОНТ И ДИАГНОСТИКА ===== -->
+   
     <div class="main-remont">
         <div class="main-remont-inner">
             <h2>Ремонт и диагностика электросетей</h2>
@@ -1926,7 +1897,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
 
-            <!-- Левая колонка: ссылки -->
+            
             <div class="footer-col">
                 <h4>Информация</h4>
                 <a href="about.html">О нас</a>
@@ -1935,14 +1906,14 @@
             </div>
 
 
-            <!-- Центр: памятка и копирайт -->
+            
             <div class="footer-col footer-center">
                 <p class="footer-note">Электромонтажные работы в Нижнем Новгороде</p>
                 <p class="footer-note">Все цены на сайте носят ознакомительный характер и не являются публичной офертой.</p>
                 <p class="footer-copy">© 2026 ELECTRO-LED</p>
             </div>
 
-            <!-- Правая колонка: соцсети -->
+            
             <div class="footer-col footer-social">
                 <h4>Вы можете найти нас здесь:</h4>
                 <div class="social-links">
