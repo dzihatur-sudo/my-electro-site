@@ -16,6 +16,13 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/108981616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Для Android (плитка на главном экране) -->
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Для Apple (добавление на главный экран iPhone/iPad) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>Электромонтажные работы</title>
     <style>
         body {
@@ -294,17 +301,18 @@
                 background-color: rgba(0, 0, 0, 0.75);
                 z-index: 0;
             }
+
         .highlight {
             color: #ff5722;
             font-weight: bold;
         }
-            /* Контент поверх затемнения */
-            .hero h1,
-            .hero p,
-            .hero .btn-hero {
-                position: relative;
-                z-index: 1;
-            }
+        /* Контент поверх затемнения */
+        .hero h1,
+        .hero p,
+        .hero .btn-hero {
+            position: relative;
+            z-index: 1;
+        }
 
         .btn-hero {
             position: relative;
@@ -698,8 +706,10 @@
                 }
 
             .phone {
-                order: 2;
-                font-size: 14px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
             }
 
             .btn-request {
@@ -763,7 +773,7 @@
                 width: 100%;
                 height: auto;
                 border-radius: 10px;
-                filter: brightness(0.5);
+                filter: brightness(0.4);
             }
 
             /* Текст поверх картинки, по центру */
@@ -824,7 +834,7 @@
             <a class="nav-link" href="page-remont.html">Ремонт и диагностика</a>
         </div>
 
-        <div class="phone">+7 (922) XXX-XX-XX</div>
+        <div class="phone">+79800297701</div>
 
         <button class="btn-request">Оставить заявку</button>
     </div>
